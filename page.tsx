@@ -119,7 +119,7 @@ export default function Website() {
         .map(([k, v]) => `${k}: ${v || ""}`)
         .join("\n")
     );
-    return `mailto:matmarinfo11@gmail.com?subject=${subject}&body=${body}`;
+    return `https://mail.google.com/mail/?view=cm&fs=1&to=matmarinfo11@gmail.com&su=${subject}&body=${body}`;
   };
 
   return (
