@@ -709,7 +709,7 @@ export default function Website() {
           <div className="text-green-900 text-lg font-semibold">
             Center naravnega otroštva
           </div>
-          <div className="text-green-800">📧 matmarinfo11@gmail.com</div>
+          <div className="text-green-800">📧 info@centerzanaravnootroštvo.si</div>
           <a
             href="https://www.biolosko.si"
             target="_blank"
