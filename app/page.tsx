@@ -249,7 +249,7 @@ export default function Website() {
           <img
             src="https://www.biolosko.si/logo-cnod.png"
             alt="CENTER ZA NARAVNO OTROŠTVO"
-            w-[360px] md:w-[480px] lg:w-[560px]
+            className="w-[360px] md:w-[480px] lg:w-[560px]"
           />
 
           <h1
@@ -263,10 +263,10 @@ export default function Website() {
               textShadow: "0 2px 6px rgba(0,0,0,0.08)",
             }}
           >
-            <span className="block text-5xl md:text-6xl lg:text-7xl>
+            <span className="block text-5xl md:text-6xl lg:text-7xl">
               CENTER ZA NARAVNO OTROŠTVO, DRUŽINO TER
             </span>
-            <span className="block mt-2 text-5xl md:text-6xl lg:text-7xl>
+            <span className="block mt-2 text-5xl md:text-6xl lg:text-7xl">
               CELOSTNO IZOBRAŽEVANJE IN SVETOVANJE
             </span>
           </h1>
