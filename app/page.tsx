@@ -119,7 +119,7 @@ export default function Website() {
         .map(([k, v]) => `${k}: ${v || ""}`)
         .join("\n")
     );
-    return `https://mail.google.com/mail/?view=cm&fs=1&to=prijava@centerzanaravnootroštvo.si&su=${subject}&body=${body}`;
+    return `https://mail.google.com/mail/?view=cm&fs=1&to=prijave@centerzanaravnootroštvo.si&su=${subject}&body=${body}`;
   };
 
   return (
@@ -263,10 +263,10 @@ export default function Website() {
               textShadow: "0 2px 6px rgba(0,0,0,0.08)",
             }}
           >
-            <span className="block text-5xl md:text-6xl lg:text-7xl">
+            <span className="block text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
               CENTER ZA NARAVNO OTROŠTVO, DRUŽINO TER
             </span>
-            <span className="block mt-2 text-5xl md:text-6xl lg:text-7xl">
+            <span className="block mt-2 text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
               CELOSTNO IZOBRAŽEVANJE IN SVETOVANJE
             </span>
           </h1>
