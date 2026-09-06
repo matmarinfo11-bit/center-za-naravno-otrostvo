@@ -82,7 +82,7 @@ function Logo() {
         >
           MATMAR
         </div>
-        <div className="text-xs text-green-800">center naravnega otroštva</div>
+        <div className="text-xs text-green-800">CENTER ZA NARAVNO OTROŠTVO</div>
       </div>
     </div>
   );
@@ -707,9 +707,20 @@ export default function Website() {
         <div className="flex flex-col items-center gap-4">
           <Logo />
           <div className="text-green-900 text-lg font-semibold">
-            Center naravnega otroštva
+            CENTER ZA NARAVNO OTROŠTVO
           </div>
+         <div className="text-green-800">
+  📍 Malo Tinje 2 · 2316 Zgornja Ložnica
+</div>
           <div className="text-green-800">📧 info@centerzanaravnootroštvo.si</div>
+          <div className="text-green-800">
+  MŠ 3738469001 · DŠ 68700890
+</div>
+       <div className="text-green-700 max-w-xl px-4">
+  Za vsa vprašanja in informacije smo vam z veseljem na voljo.
+  <br />
+  Vaše zaupanje nam je pomembno. 🌿
+</div>   
           <a
             href="https://www.biolosko.si"
             target="_blank"
