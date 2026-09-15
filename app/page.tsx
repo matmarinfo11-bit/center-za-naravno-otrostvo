@@ -506,7 +506,62 @@ export default function Website() {
         </div>
       </section>
 
+{/* UČNA PODPORA OTROKOM */}
+<section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
+  <div className="max-w-5xl mx-auto">
+    <div className="rounded-3xl border border-green-200 bg-white/95 p-8 md:p-12 shadow-lg">
 
+      <h2
+        className="text-3xl md:text-5xl font-bold text-center text-green-900 mb-6"
+        style={{ fontFamily: "serif" }}
+      >
+        Učna podpora otrokom
+      </h2>
+
+      <p className="text-center text-xl md:text-2xl text-green-800 mb-10">
+        Na otroku prijazen način z elementi waldorfske pedagogike
+      </p>
+
+      <div className="max-w-3xl mx-auto text-center text-blue-900 text-lg leading-relaxed space-y-5">
+        <p>
+          Otrokom nudimo individualno in skupinsko učno podporo pri učenju,
+          razumevanju učne snovi ter razvijanju samozavesti pri šolskem delu.
+        </p>
+
+        <p>
+          Pri delu upoštevamo otrokove potrebe, njegove sposobnosti,
+          interese in način učenja.
+        </p>
+
+        <p>
+          Učenje spodbujamo na ustvarjalen, celosten in otroku prijazen način,
+          z elementi waldorfske pedagogike, gibanja, umetnosti in doživljajskega
+          učenja.
+        </p>
+
+        <ul className="text-left max-w-xl mx-auto space-y-3 pt-4">
+          <li>🌱 individualna učna podpora</li>
+          <li>📚 pomoč pri razumevanju učne snovi</li>
+          <li>🎨 ustvarjalni in doživljajski pristopi</li>
+          <li>💚 razvijanje samozavesti in notranje motivacije</li>
+          <li>🤝 sodelovanje s starši</li>
+        </ul>
+      </div>
+
+      <div className="text-center mt-10">
+        <a
+          href="#kontakt"
+          className="inline-block px-8 py-4 rounded-full bg-green-800 text-white font-semibold text-lg shadow-md hover:bg-green-900 transition"
+        >
+          Prijava na učno podporo
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+      
+      
       {/* ERASMUS+ */}
       <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
         <SectionTitle>🌍 ERASMUS+</SectionTitle>
