@@ -509,111 +509,109 @@ export default function Website() {
 {/* UČNA PODPORA OTROKOM */}
 <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
   <div className="max-w-5xl mx-auto">
-    <div className="rounded-3xl border border-green-200 bg-white/95 p-8 md:p-12 shadow-lg">
-<div className="mb-8 flex justify-center">
-  <img
-    src="/ucna-podpora.jpg"
-    alt="Učna podpora otrokom"
-    className="w-full max-w-3xl rounded-3xl shadow-lg object-cover"
-  />
-</div>
+    <div
+      className="rounded-3xl border p-8 md:p-12 shadow-[0_10px_30px_rgba(90,80,50,0.08)]"
+      style={{
+        backgroundColor: "#F7F3E8",
+        borderColor: "#B8C8A8",
+      }}
+    >
+      <div className="mb-8 flex justify-center">
+        <img
+          src="/ucna-podpora.jpg"
+          alt="Individualna učna podpora otrokom"
+          className="w-full max-w-3xl rounded-3xl shadow-md object-cover"
+        />
+      </div>
+
       <h2
-        className="text-3xl md:text-5xl font-bold text-center text-green-900 mb-6"
-        style={{ fontFamily: "serif" }}
+        className="text-3xl md:text-4xl text-center mb-4"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
       >
         Učna podpora otrokom
       </h2>
 
-      <p className="text-center text-xl md:text-2xl text-green-800 mb-10">
-        Na otroku prijazen način z elementi waldorfske pedagogike
+      <p
+        className="text-center text-lg md:text-xl mb-8 italic"
+        style={{
+          color: "#6B765F",
+          fontFamily: "Georgia, serif",
+        }}
+      >
+        S spoštovanjem do otrokovega individualnega razvoja
       </p>
 
-      <div className="max-w-3xl mx-auto text-center text-blue-900 text-lg leading-relaxed space-y-5">
+      <div
+        className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed space-y-5"
+        style={{
+          color: "#4E5B4A",
+        }}
+      >
         <p>
-          Otrokom nudimo individualno in skupinsko učno podporo pri učenju,
-          razumevanju učne snovi ter razvijanju samozavesti pri šolskem delu.
+          Otrokom nudimo individualno učno podporo v spodbudnem in varnem
+          okolju, kjer lahko razvijajo svoje sposobnosti, zaupanje vase in
+          veselje do učenja.
         </p>
 
         <p>
-          Pri delu upoštevamo otrokove potrebe, njegove sposobnosti,
-          interese in način učenja.
+          Pri delu izhajamo iz otrokovih potreb, zanimanj, sposobnosti in
+          njegovega edinstvenega načina učenja. Učenje razumemo kot celosten
+          proces, ki vključuje mišljenje, čutenje, ustvarjalnost, gibanje in
+          doživljanje.
         </p>
 
         <p>
-          Učenje spodbujamo na ustvarjalen, celosten in otroku prijazen način,
-          z elementi waldorfske pedagogike, gibanja, umetnosti in doživljajskega
-          učenja.
+          Z elementi waldorfske pedagogike, umetnosti, naravnih materialov in
+          izkustvenega učenja otrokom pomagamo, da učne vsebine razumejo na
+          njim lasten, doživljajski način.
         </p>
 
-        <ul className="text-left max-w-xl mx-auto space-y-3 pt-4">
-          <li>🌱 individualna učna podpora</li>
-          <li>📚 pomoč pri razumevanju učne snovi</li>
-          <li>🎨 ustvarjalni in doživljajski pristopi</li>
-          <li>💚 razvijanje samozavesti in notranje motivacije</li>
-          <li>🤝 sodelovanje s starši</li>
-        </ul>
+        <div className="pt-4">
+          <h3
+            className="text-xl md:text-2xl mb-4"
+            style={{
+              color: "#315C45",
+              fontFamily: "Georgia, serif",
+              fontWeight: 600,
+            }}
+          >
+            Individualna podpora vključuje:
+          </h3>
+
+          <ul className="space-y-3 list-disc pl-6">
+            <li>individualno podporo glede na otrokove potrebe</li>
+            <li>pomoč pri razumevanju učne snovi</li>
+            <li>učenje skozi ustvarjalnost, umetnost in doživljanje</li>
+            <li>razvijanje samozavesti in notranje motivacije</li>
+            <li>spodbujanje veselja do učenja</li>
+            <li>povezovanje učenja z gibanjem, naravo in vsakdanjim življenjem</li>
+            <li>sodelovanje s starši</li>
+          </ul>
+        </div>
       </div>
 
-      <div className="text-center mt-10">
+      <div className="mt-10 flex justify-center">
         <a
           href="#kontakt"
-          className="inline-block px-8 py-4 rounded-full bg-green-800 text-white font-semibold text-lg shadow-md hover:bg-green-900 transition"
+          className="inline-flex items-center justify-center rounded-full px-7 py-3 text-white transition-all duration-300 shadow-md hover:shadow-lg"
+          style={{
+            backgroundColor: "#B87955",
+          }}
         >
-          Prijava na učno podporo
+          Prijava na učno podporo →
         </a>
       </div>
-
     </div>
   </div>
 </section>
-      
-      
       {/* ERASMUS+ */}
       <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
         <SectionTitle>🌍 ERASMUS+</SectionTitle>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          <Card>
-            <h3
-              className="text-2xl md:text-3xl font-bold text-blue-700"
-              style={{ fontFamily: "cursive" }}
-            >
-              ✈️ Mobilnost
-            </h3>
-            <p className="mt-3 text-lg text-blue-900">
-              Mednarodne mobilnosti omogočajo izmenjavo znanja, izkušenj in
-              waldorfskih praks med državami.
-            </p>
-            <ul className="mt-4 text-lg text-blue-900 space-y-2">
-              <li>🌍 izmenjave po Evropi</li>
-              <li>📚 novi pedagoški pristopi</li>
-              <li>🤝 mreženje strokovnjakov</li>
-              <li>✨ osebna in strokovna rast</li>
-            </ul>
-
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const f = e.target as HTMLFormElement;
-                window.location.href = buildMailto("Mobilnost", {
-                  Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
-                  Email: (f.elements.namedItem("email") as HTMLInputElement)
-                    .value,
-                });
-              }}
-              className="mt-4 space-y-2"
-            >
-              <Input name="ime" placeholder="Ime in priimek" required />
-              <Input name="email" type="email" placeholder="Email" required />
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded-xl"
-              >
-                Prijava
-              </button>
-            </form>
-          </Card>
-
+        <div className="grid md:grid-cols-2 gap-8">
           <Card>
             <h3
               className="text-2xl md:text-3xl font-bold text-indigo-700"
