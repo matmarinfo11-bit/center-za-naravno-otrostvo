@@ -510,7 +510,13 @@ export default function Website() {
 <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
   <div className="max-w-5xl mx-auto">
     <div className="rounded-3xl border border-green-200 bg-white/95 p-8 md:p-12 shadow-lg">
-
+<div className="mb-8 flex justify-center">
+  <img
+    src="/ucna-podpora.jpg"
+    alt="Učna podpora otrokom"
+    className="w-full max-w-3xl rounded-3xl shadow-lg object-cover"
+  />
+</div>
       <h2
         className="text-3xl md:text-5xl font-bold text-center text-green-900 mb-6"
         style={{ fontFamily: "serif" }}
