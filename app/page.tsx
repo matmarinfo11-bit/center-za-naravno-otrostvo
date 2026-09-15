@@ -742,6 +742,37 @@ export default function Website() {
         <SectionTitle>📩 PRIJAVE</SectionTitle>
         <div className="grid md:grid-cols-2 gap-8 mt-12">
           <Card>
+            <h3 className="text-2xl font-bold text-orange-800" style={{ fontFamily: "var(--font-waldorf), Georgia, serif" }}>
+              📚 Individualna učna podpora
+            </h3>
+            <p className="mt-3 text-green-900">
+              Prijava na individualno podporo pri matematiki, slovenščini ali kemiji.
+            </p>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              const f = e.target as HTMLFormElement;
+              window.location.href = buildMailto("Individualna učna podpora", {
+                Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
+                Email: (f.elements.namedItem("email") as HTMLInputElement).value,
+                Predmet: (f.elements.namedItem("predmet") as HTMLSelectElement).value,
+                Sporocilo: (f.elements.namedItem("sporocilo") as HTMLTextAreaElement).value,
+              });
+            }} className="mt-4 space-y-2">
+              <Input name="ime" placeholder="Ime in priimek" required />
+              <Input name="email" type="email" placeholder="E-pošta" required />
+              <select name="predmet" className="w-full p-2 rounded-xl border border-black/10 bg-white/70" required>
+                <option value="">Izberite predmet</option>
+                <option value="Matematika">Matematika</option>
+                <option value="Slovenščina">Slovenščina</option>
+                <option value="Kemija">Kemija</option>
+              </select>
+              <textarea name="sporocilo" placeholder="Kratko sporočilo" className="w-full p-2 rounded-xl border border-black/10 bg-white/70" rows={4} />
+              <button type="submit" className="w-full text-white py-2 rounded-xl" style={{ backgroundColor: "#B87955" }}>
+                Pošlji prijavo
+              </button>
+            </form>
+          </Card>
+          <Card>
             <h3
               className="text-2xl font-bold text-green-800"
               style={{ fontFamily: "var(--font-waldorf), Georgia, serif" }}
