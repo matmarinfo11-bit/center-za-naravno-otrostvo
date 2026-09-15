@@ -646,14 +646,22 @@ export default function Website() {
               </ul>
             </div>
 
-            <div className="mt-10 flex justify-center">
-              <a
-                href="#kontakt"
-                className="inline-flex items-center justify-center rounded-full px-7 py-3 text-white font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
-                style={{ backgroundColor: "#B87955" }}
-              >
-                Prijava na učno podporo →
-              </a>
+            
+             <div className="mt-10 flex justify-center">
+  <button
+    type="button"
+    onClick={() => {
+      document.getElementById("kontakt")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }}
+    className="inline-flex items-center justify-center rounded-full px-7 py-3 text-white font-semibold transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+    style={{ backgroundColor: "#B87955" }}
+  >
+    Prijava na učno podporo →
+  </button>
+</div>
             </div>
           </div>
         </div>
