@@ -1,13 +1,20 @@
 "use client";
 
 import React from "react";
+import { Cormorant_Garamond } from "next/font/google";
+
+const waldorfFont = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-waldorf",
+});
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <h2
       className="text-4xl md:text-6xl font-bold text-center mb-12 tracking-wide"
       style={{
-        fontFamily: "cursive",
+        fontFamily: "var(--font-waldorf), Georgia, serif",
         background:
           "linear-gradient(90deg,#7c9a6d,#d4a373,#e5989b,#a8dadc,#bdb2ff)",
         WebkitBackgroundClip: "text",
@@ -73,7 +80,7 @@ function Logo() {
         <div
           className="text-2xl md:text-3xl font-bold"
           style={{
-            fontFamily: "cursive",
+            fontFamily: "var(--font-waldorf), Georgia, serif",
             background:
               "linear-gradient(90deg,#8fae7a,#e0b27f,#f1a7b5,#9edee6,#c7c2ff)",
             WebkitBackgroundClip: "text",
@@ -123,13 +130,13 @@ export default function Website() {
   };
 
   return (
-    <div className="min-h-screen relative bg-gradient-to-br from-rose-50 via-amber-50 to-emerald-50">
+    <div className={`${waldorfFont.variable} min-h-screen relative bg-gradient-to-br from-rose-50 via-amber-50 to-emerald-50`}>
       {/* WATERMARK MATMAR - OZADJE CELOTNE STRANI */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center z-0">
         <div
           className="text-[160px] md:text-[240px] lg:text-[300px] font-bold tracking-widest select-none"
           style={{
-            fontFamily: "cursive",
+            fontFamily: "var(--font-waldorf), Georgia, serif",
             background:
               "linear-gradient(90deg,#7c9a6d,#d4a373,#e5989b,#a8dadc,#bdb2ff)",
             WebkitBackgroundClip: "text",
@@ -149,7 +156,7 @@ export default function Website() {
         <div
           className="text-[80px] md:text-[120px] font-bold select-none"
           style={{
-            fontFamily: "cursive",
+            fontFamily: "var(--font-waldorf), Georgia, serif",
             color: "rgba(120,140,120,0.12)",
             transform: "rotate(-12deg)",
           }}
@@ -166,7 +173,7 @@ export default function Website() {
               key={i}
               className="text-[60px] md:text-[90px] font-bold select-none text-center"
               style={{
-                fontFamily: "cursive",
+                fontFamily: "var(--font-waldorf), Georgia, serif",
                 color: "rgba(120,140,120,0.25)",
                 transform: i % 2 === 0 ? "rotate(-8deg)" : "rotate(8deg)",
               }}
@@ -255,7 +262,7 @@ export default function Website() {
           <h1
             className="mt-8 text-center leading-tight font-medium tracking-wide"
             style={{
-              fontFamily: "cursive",
+              fontFamily: "var(--font-waldorf), Georgia, serif",
               background:
                 "linear-gradient(90deg,#7c9a6d,#d4a373,#e5989b,#a8dadc,#bdb2ff)",
               WebkitBackgroundClip: "text",
@@ -305,7 +312,7 @@ export default function Website() {
             </div>
             <h3
               className="text-3xl md:text-4xl font-bold text-green-800"
-              style={{ fontFamily: "cursive" }}
+              style={{ fontFamily: "var(--font-waldorf), Georgia, serif" }}
             >
               🌿 Varstvo otrok
             </h3>
@@ -345,7 +352,7 @@ export default function Website() {
             </div>
             <h3
               className="text-3xl md:text-4xl font-bold text-amber-700"
-              style={{ fontFamily: "cursive" }}
+              style={{ fontFamily: "var(--font-waldorf), Georgia, serif" }}
             >
               🎨 Delavnice
             </h3>
@@ -385,7 +392,7 @@ export default function Website() {
             </div>
             <h3
               className="text-3xl md:text-4xl font-bold text-indigo-700"
-              style={{ fontFamily: "cursive" }}
+              style={{ fontFamily: "var(--font-waldorf), Georgia, serif" }}
             >
               📚 Izobraževanje
             </h3>
@@ -425,7 +432,7 @@ export default function Website() {
             </div>
             <h3
               className="text-3xl md:text-4xl font-bold text-emerald-700"
-              style={{ fontFamily: "cursive" }}
+              style={{ fontFamily: "var(--font-waldorf), Georgia, serif" }}
             >
               🌱 Biodinamika
             </h3>
@@ -467,7 +474,7 @@ export default function Website() {
 
             <h3
               className="text-3xl md:text-4xl font-bold text-green-900 text-center"
-              style={{ fontFamily: "cursive" }}
+              style={{ fontFamily: "var(--font-waldorf), Georgia, serif" }}
             >
               🌾 Prehrana • DOMAČE BIO
             </h3>
@@ -507,107 +514,151 @@ export default function Website() {
       </section>
 
 {/* UČNA PODPORA OTROKOM */}
-<section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
-  <div className="max-w-5xl mx-auto">
-    <div
-      className="rounded-3xl border p-8 md:p-12 shadow-[0_10px_30px_rgba(90,80,50,0.08)]"
-      style={{
-        backgroundColor: "#F7F3E8",
-        borderColor: "#B8C8A8",
-      }}
-    >
-      <div className="mb-8 flex justify-center">
-        <img
-          src="/ucna-podpora.jpg"
-          alt="Individualna učna podpora otrokom"
-          className="w-full max-w-3xl rounded-3xl shadow-md object-cover"
-        />
-      </div>
-
-      <h2
-        className="text-3xl md:text-4xl text-center mb-4"
-        style={{
-          color: "#315C45",
-          fontFamily: "Georgia, serif",
-          fontWeight: 600,
-        }}
-      >
-        Učna podpora otrokom
-      </h2>
-
-      <p
-        className="text-center text-lg md:text-xl mb-8 italic"
-        style={{
-          color: "#6B765F",
-          fontFamily: "Georgia, serif",
-        }}
-      >
-        S spoštovanjem do otrokovega individualnega razvoja
-      </p>
-
-      <div
-        className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed space-y-5"
-        style={{
-          color: "#4E5B4A",
-        }}
-      >
-        <p>
-          Otrokom nudimo individualno učno podporo v spodbudnem in varnem
-          okolju, kjer lahko razvijajo svoje sposobnosti, zaupanje vase in
-          veselje do učenja.
-        </p>
-
-        <p>
-          Pri delu izhajamo iz otrokovih potreb, zanimanj, sposobnosti in
-          njegovega edinstvenega načina učenja. Učenje razumemo kot celosten
-          proces, ki vključuje mišljenje, čutenje, ustvarjalnost, gibanje in
-          doživljanje.
-        </p>
-
-        <p>
-          Z elementi waldorfske pedagogike, umetnosti, naravnih materialov in
-          izkustvenega učenja otrokom pomagamo, da učne vsebine razumejo na
-          njim lasten, doživljajski način.
-        </p>
-
-        <div className="pt-4">
-          <h3
-            className="text-xl md:text-2xl mb-4"
+      <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          <div
+            className="rounded-3xl border p-8 md:p-12 shadow-xl"
             style={{
-              color: "#315C45",
-              fontFamily: "Georgia, serif",
-              fontWeight: 600,
+              background: "linear-gradient(135deg, #FFFDF5, #F3F0E2, #EAF1E5)",
+              borderColor: "#B8C8A8",
             }}
           >
-            Individualna podpora vključuje:
-          </h3>
+            <div className="mb-8 flex justify-center">
+              <img
+                src="/ucna-podpora.jpg"
+                alt="Individualna učna podpora otrokom"
+                className="w-full max-w-3xl rounded-3xl shadow-md object-cover"
+              />
+            </div>
 
-          <ul className="space-y-3 list-disc pl-6">
-            <li>individualno podporo glede na otrokove potrebe</li>
-            <li>pomoč pri razumevanju učne snovi</li>
-            <li>učenje skozi ustvarjalnost, umetnost in doživljanje</li>
-            <li>razvijanje samozavesti in notranje motivacije</li>
-            <li>spodbujanje veselja do učenja</li>
-            <li>povezovanje učenja z gibanjem, naravo in vsakdanjim življenjem</li>
-            <li>sodelovanje s starši</li>
-          </ul>
+            <h2
+              className="text-3xl md:text-4xl text-center mb-4"
+              style={{
+                color: "#315C45",
+                fontFamily: "Georgia, serif",
+                fontWeight: 600,
+              }}
+            >
+              Učna podpora otrokom
+            </h2>
+
+            <p
+              className="text-center text-lg md:text-xl mb-8 italic"
+              style={{
+                color: "#6B765F",
+                fontFamily: "Georgia, serif",
+              }}
+            >
+              S spoštovanjem do otrokovega individualnega razvoja
+            </p>
+
+            <div
+              className="max-w-4xl mx-auto text-base md:text-lg leading-relaxed"
+              style={{ color: "#4E5B4A" }}
+            >
+              <p className="mb-5">
+                Otrokom nudimo individualno učno podporo v spodbudnem in varnem
+                okolju, kjer lahko razvijajo svoje sposobnosti, zaupanje vase
+                in veselje do učenja.
+              </p>
+
+              <p className="mb-5">
+                Pri delu izhajamo iz otrokovih potreb, zanimanj, sposobnosti in
+                njegovega edinstvenega načina učenja. Učenje razumemo kot
+                celosten proces, ki vključuje mišljenje, čutenje, ustvarjalnost,
+                gibanje in doživljanje.
+              </p>
+
+              <p className="mb-8">
+                Z elementi waldorfske pedagogike, umetnosti, naravnih materialov
+                in izkustvenega učenja otrokom pomagamo, da učne vsebine
+                razumejo na njim lasten, doživljajski način.
+              </p>
+
+              <h3
+                className="text-xl md:text-2xl mb-5"
+                style={{
+                  color: "#315C45",
+                  fontFamily: "Georgia, serif",
+                  fontWeight: 600,
+                }}
+              >
+                Podpora pri posameznih učnih predmetih
+              </h3>
+
+              <div className="grid md:grid-cols-3 gap-5 mb-8">
+                <div className="rounded-2xl p-5 bg-white/70 border border-green-200 shadow-sm">
+                  <h4 className="text-xl font-semibold text-green-800 mb-3">
+                    📐 Matematika
+                  </h4>
+                  <p>
+                    Pomoč pri razumevanju matematičnih pojmov, računskih
+                    postopkov, besedilnih nalog in razvijanju logičnega
+                    mišljenja. Učne vsebine približamo otroku s konkretnimi,
+                    nazornimi in življenjskimi primeri.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl p-5 bg-white/70 border border-amber-200 shadow-sm">
+                  <h4 className="text-xl font-semibold text-amber-800 mb-3">
+                    📖 Slovenščina
+                  </h4>
+                  <p>
+                    Podpora pri branju, pisanju, razumevanju prebranega,
+                    slovnici, pravopisu in izražanju. Spodbujamo razvoj
+                    jezikovnega občutka, besednega zaklada in samozavestnega
+                    sporazumevanja.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl p-5 bg-white/70 border border-blue-200 shadow-sm">
+                  <h4 className="text-xl font-semibold text-blue-800 mb-3">
+                    ⚗️ Kemija
+                  </h4>
+                  <p>
+                    Pomoč pri razumevanju osnovnih kemijskih pojmov, elementov,
+                    spojin, kemijskih reakcij in povezovanju kemije z
+                    vsakdanjim življenjem. Snov razlagamo postopno, razumljivo
+                    in s praktičnimi primeri.
+                  </p>
+                </div>
+              </div>
+
+              <h3
+                className="text-xl md:text-2xl mb-4"
+                style={{
+                  color: "#315C45",
+                  fontFamily: "Georgia, serif",
+                  fontWeight: 600,
+                }}
+              >
+                Individualna podpora vključuje:
+              </h3>
+
+              <ul className="space-y-3 list-disc pl-6">
+                <li>individualno podporo glede na otrokove potrebe</li>
+                <li>pomoč pri razumevanju učne snovi</li>
+                <li>učenje skozi ustvarjalnost, umetnost in doživljanje</li>
+                <li>razvijanje samozavesti in notranje motivacije</li>
+                <li>spodbujanje veselja do učenja</li>
+                <li>povezovanje učenja z gibanjem, naravo in vsakdanjim življenjem</li>
+                <li>sodelovanje s starši</li>
+              </ul>
+            </div>
+
+            <div className="mt-10 flex justify-center">
+              <a
+                href="#kontakt"
+                className="inline-flex items-center justify-center rounded-full px-7 py-3 text-white font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+                style={{ backgroundColor: "#B87955" }}
+              >
+                Prijava na učno podporo →
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mt-10 flex justify-center">
-        <a
-          href="#kontakt"
-          className="inline-flex items-center justify-center rounded-full px-7 py-3 text-white transition-all duration-300 shadow-md hover:shadow-lg"
-          style={{
-            backgroundColor: "#B87955",
-          }}
-        >
-          Prijava na učno podporo →
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
       {/* ERASMUS+ */}
       <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
         <SectionTitle>🌍 ERASMUS+</SectionTitle>
@@ -615,7 +666,7 @@ export default function Website() {
           <Card>
             <h3
               className="text-2xl md:text-3xl font-bold text-indigo-700"
-              style={{ fontFamily: "cursive" }}
+              style={{ fontFamily: "var(--font-waldorf), Georgia, serif" }}
             >
               👀 Hospitacije
             </h3>
@@ -629,25 +680,20 @@ export default function Website() {
               <li>🌿 učenje skozi opazovanje</li>
               <li>📖 prenos dobrih praks</li>
             </ul>
-
             <form
               onSubmit={(e) => {
                 e.preventDefault();
                 const f = e.target as HTMLFormElement;
                 window.location.href = buildMailto("Hospitacije", {
                   Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
-                  Email: (f.elements.namedItem("email") as HTMLInputElement)
-                    .value,
+                  Email: (f.elements.namedItem("email") as HTMLInputElement).value,
                 });
               }}
               className="mt-4 space-y-2"
             >
               <Input name="ime" placeholder="Ime in priimek" required />
               <Input name="email" type="email" placeholder="Email" required />
-              <button
-                type="submit"
-                className="w-full bg-indigo-600 text-white py-2 rounded-xl"
-              >
+              <button type="submit" className="w-full bg-indigo-600 text-white py-2 rounded-xl">
                 Prijava
               </button>
             </form>
@@ -656,7 +702,7 @@ export default function Website() {
           <Card>
             <h3
               className="text-2xl md:text-3xl font-bold text-emerald-700"
-              style={{ fontFamily: "cursive" }}
+              style={{ fontFamily: "var(--font-waldorf), Georgia, serif" }}
             >
               🌐 Partnerji
             </h3>
@@ -670,40 +716,35 @@ export default function Website() {
               <li>🇳🇱 Nizozemska</li>
               <li>🇭🇷 Hrvaška</li>
             </ul>
-
             <form
               onSubmit={(e) => {
                 e.preventDefault();
                 const f = e.target as HTMLFormElement;
                 window.location.href = buildMailto("Partnerstvo", {
-                  Organizacija: (
-                    f.elements.namedItem("organizacija") as HTMLInputElement
-                  ).value,
-                  Email: (f.elements.namedItem("email") as HTMLInputElement)
-                    .value,
+                  Organizacija: (f.elements.namedItem("organizacija") as HTMLInputElement).value,
+                  Email: (f.elements.namedItem("email") as HTMLInputElement).value,
                 });
               }}
               className="mt-4 space-y-2"
             >
               <Input name="organizacija" placeholder="Organizacija" required />
               <Input name="email" type="email" placeholder="Email" required />
-              <button
-                type="submit"
-                className="w-full bg-emerald-600 text-white py-2 rounded-xl"
-              >
+              <button type="submit" className="w-full bg-emerald-600 text-white py-2 rounded-xl">
                 Postani partner
               </button>
             </form>
           </Card>
         </div>
+      </section>
 
         {/* LOČENE PRIJAVE PROGRAMOV */}
+        <div id="kontakt">
         <SectionTitle>📩 PRIJAVE</SectionTitle>
         <div className="grid md:grid-cols-2 gap-8 mt-12">
           <Card>
             <h3
               className="text-2xl font-bold text-green-800"
-              style={{ fontFamily: "cursive" }}
+              style={{ fontFamily: "var(--font-waldorf), Georgia, serif" }}
             >
               🌿 Varstvo otrok
             </h3>
@@ -733,7 +774,7 @@ export default function Website() {
           <Card>
             <h3
               className="text-2xl font-bold text-amber-700"
-              style={{ fontFamily: "cursive" }}
+              style={{ fontFamily: "var(--font-waldorf), Georgia, serif" }}
             >
               🎨 Delavnice
             </h3>
@@ -759,6 +800,7 @@ export default function Website() {
               </button>
             </form>
           </Card>
+        </div>
         </div>
       </section>
 
