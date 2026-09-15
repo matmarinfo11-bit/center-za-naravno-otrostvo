@@ -576,9 +576,120 @@ export default function Website() {
               </p>
 
              
-      </section>
 
-      {/* ERASMUS+ */}
+              
+           
+
+        
+
+
+
+
+    {/* UČNA PODPORA OTROKOM */}
+
+<section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
+  <div className="max-w-5xl mx-auto">
+    <div
+      className="rounded-3xl border p-8 md:p-12 shadow-[0_10px_30px_rgba(90,80,50,0.08)]"
+      style={{
+        backgroundColor: "#F7F3E8",
+        borderColor: "#B8C8A8",
+      }}
+    >
+      <div className="mb-8 flex justify-center">
+        <img
+          src="/ucna-podpora.jpg"
+          alt="Individualna učna podpora otrokom"
+          className="w-full max-w-3xl rounded-3xl shadow-md object-cover"
+        />
+      </div>
+
+      <h2
+        className="text-3xl md:text-4xl text-center mb-4"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
+      >
+        Učna podpora otrokom
+      </h2>
+
+      <p
+        className="text-center text-lg md:text-xl mb-8 italic"
+        style={{
+          color: "#6B765F",
+          fontFamily: "Georgia, serif",
+        }}
+      >
+        S spoštovanjem do otrokovega individualnega razvoja
+      </p>
+
+      <div
+        className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed space-y-5"
+        style={{
+          color: "#4E5B4A",
+        }}
+      >
+        <p>
+          Otrokom nudimo individualno učno podporo v spodbudnem in varnem
+          okolju, kjer lahko razvijajo svoje sposobnosti, zaupanje vase in
+          veselje do učenja.
+        </p>
+
+        <p>
+          Pri delu izhajamo iz otrokovih potreb, zanimanj, sposobnosti in
+          njegovega edinstvenega načina učenja. Učenje razumemo kot celosten
+          proces, ki vključuje mišljenje, čutenje, ustvarjalnost, gibanje in
+          doživljanje.
+        </p>
+
+        <p>
+          Z elementi waldorfske pedagogike, umetnosti, naravnih materialov in
+          izkustvenega učenja otrokom pomagamo, da učne vsebine razumejo na
+          njim lasten, doživljajski način.
+        </p>
+
+        <div className="pt-4">
+          <h3
+            className="text-xl md:text-2xl mb-4"
+            style={{
+              color: "#315C45",
+              fontFamily: "Georgia, serif",
+              fontWeight: 600,
+            }}
+          >
+            Individualna podpora vključuje:
+          </h3>
+
+          <ul className="space-y-3 list-disc pl-6">
+            <li>individualno podporo glede na otrokove potrebe</li>
+            <li>pomoč pri razumevanju učne snovi</li>
+            <li>učenje skozi ustvarjalnost, umetnost in doživljanje</li>
+            <li>razvijanje samozavesti in notranje motivacije</li>
+            <li>spodbujanje veselja do učenja</li>
+            <li>
+              povezovanje učenja z gibanjem, naravo in vsakdanjim življenjem
+            </li>
+            <li>sodelovanje s starši</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="mt-10 flex justify-center">
+        <a
+          href="#kontakt"
+          className="inline-flex items-center justify-center rounded-full px-7 py-3 text-white transition-all duration-300 shadow-md hover:shadow-lg"
+          style={{
+            backgroundColor: "#B87955",
+          }}
+        >
+          Prijava na učno podporo →
+        </a>
+      </div>
+    </div>
+  </div>
+</section> {/* ERASMUS+ */}
       <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
         <SectionTitle>🌍 ERASMUS+</SectionTitle>
         <div className="grid md:grid-cols-2 gap-8">
