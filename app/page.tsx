@@ -506,6 +506,84 @@ export default function Website() {
         </div>
       </section>
 
+{/* UČNA PODPORA OTROKOM */}
+<section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
+  <div className="max-w-4xl mx-auto">
+    <div className="rounded-3xl border border-green-200 bg-white/90 p-8 md:p-12 shadow-sm">
+
+      <h2
+        className="text-3xl md:text-4xl font-bold text-center text-green-900 mb-4"
+        style={{ fontFamily: "serif" }}
+      >
+        Učna podpora otrokom
+      </h2>
+
+      <p className="text-center text-lg md:text-xl text-green-800 mb-8">
+        Na otroku prijazen način z elementi waldorfske pedagogike
+      </p>
+
+      <div className="text-center text-gray-700 leading-relaxed max-w-2xl mx-auto">
+        <p className="mb-5">
+          Otrokom nudimo individualno in skupinsko učno podporo pri učenju,
+          razumevanju učne snovi ter razvijanju samozavesti pri šolskem delu.
+        </p>
+
+        <p className="mb-6">
+          Učenje poteka na miren, spodbuden in otroku prilagojen način,
+          z upoštevanjem njegovih potreb, ritma in načina doživljanja.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-4 mb-8">
+        <div className="rounded-2xl bg-green-50 p-5 text-center">
+          <h3 className="font-semibold text-green-900 mb-2">
+            Matematika
+          </h3>
+          <p className="text-sm text-gray-700">
+            Razumevanje števil, računskih postopkov in matematičnega mišljenja.
+          </p>
+        </div>
+
+        <div className="rounded-2xl bg-green-50 p-5 text-center">
+          <h3 className="font-semibold text-green-900 mb-2">
+            Slovenščina
+          </h3>
+          <p className="text-sm text-gray-700">
+            Branje, pisanje, slovnica, razumevanje besedil in izražanje.
+          </p>
+        </div>
+
+        <div className="rounded-2xl bg-green-50 p-5 text-center">
+          <h3 className="font-semibold text-green-900 mb-2">
+            Kemija
+          </h3>
+          <p className="text-sm text-gray-700">
+            Razlaga snovi na razumljiv način s primeri iz vsakdanjega življenja.
+          </p>
+        </div>
+      </div>
+
+      <div className="text-center text-gray-700 mb-8">
+        <p>
+          Posebno pozornost namenjamo učenju skozi razumevanje, praktične
+          primere, zgodbe, ustvarjalnost in povezovanje znanja z življenjem.
+        </p>
+      </div>
+
+      <div className="text-center">
+        <a
+          href="mailto:info@naravnootrostvo.eu?subject=Prijava%20na%20u%C4%8Dno%20podporo"
+          className="inline-block rounded-full bg-green-800 px-8 py-4 text-white font-semibold hover:bg-green-700 transition"
+        >
+          Prijava na učno podporo
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      
       {/* ERASMUS+ */}
       <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
         <SectionTitle>🌍 ERASMUS+</SectionTitle>
