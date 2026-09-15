@@ -508,7 +508,8 @@ export default function Website() {
 
 {/* UČNA PODPORA OTROKOM */}
 <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
-  <div className="max-w-4xl mx-auto">
+  <div className="max-w-5xl mx-auto">
+
     <div className="rounded-3xl border border-green-200 bg-white/95 p-8 md:p-12 shadow-sm">
 
       <h2
@@ -522,7 +523,7 @@ export default function Website() {
         Na otroku prijazen način z elementi waldorfske pedagogike
       </p>
 
-      <div className="text-center text-blue-900 leading-relaxed max-w-3xl mx-auto space-y-4 mb-8">
+      <div className="text-center text-blue-900 leading-relaxed max-w-3xl mx-auto space-y-4 mb-10">
         <p>
           Otrokom nudimo individualno in skupinsko učno podporo pri učenju,
           razumevanju učne snovi ter razvijanju samozavesti pri šolskem delu.
@@ -534,38 +535,84 @@ export default function Website() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4 mb-8">
+      {/* PODROČJA UČNE PODPORE */}
+      <div className="grid md:grid-cols-3 gap-6 mb-10">
 
-        <div className="rounded-2xl bg-green-50 p-6 text-center">
-          <h3 className="font-semibold text-green-900 text-lg mb-3">
-            Matematika
-          </h3>
-          <p className="text-blue-900 leading-relaxed">
-            Razumevanje števil, računskih postopkov in matematičnega mišljenja.
-          </p>
+        {/* MATEMATIKA */}
+        <div className="overflow-hidden rounded-2xl bg-white border border-green-100 shadow-sm hover:shadow-md transition">
+
+          <img
+            src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=85"
+            alt="Otrok pri učenju matematike"
+            className="w-full h-48 object-cover"
+          />
+
+          <div className="p-6 text-center">
+            <h3
+              className="font-semibold text-green-900 text-xl mb-3"
+              style={{ fontFamily: "serif" }}
+            >
+              Matematika
+            </h3>
+
+            <p className="text-blue-900 leading-relaxed">
+              Razumevanje števil, računskih postopkov in matematičnega mišljenja.
+            </p>
+          </div>
+
         </div>
 
-        <div className="rounded-2xl bg-green-50 p-6 text-center">
-          <h3 className="font-semibold text-green-900 text-lg mb-3">
-            Slovenščina
-          </h3>
-          <p className="text-blue-900 leading-relaxed">
-            Branje, pisanje, slovnica, razumevanje besedil in izražanje.
-          </p>
+        {/* SLOVENŠČINA */}
+        <div className="overflow-hidden rounded-2xl bg-white border border-green-100 shadow-sm hover:shadow-md transition">
+
+          <img
+            src="https://images.unsplash.com/photo-1455885666463-8d8e9d8d6e7c?auto=format&fit=crop&w=800&q=85"
+            alt="Otrok pri branju in pisanju"
+            className="w-full h-48 object-cover"
+          />
+
+          <div className="p-6 text-center">
+            <h3
+              className="font-semibold text-green-900 text-xl mb-3"
+              style={{ fontFamily: "serif" }}
+            >
+              Slovenščina
+            </h3>
+
+            <p className="text-blue-900 leading-relaxed">
+              Branje, pisanje, slovnica, razumevanje besedil in izražanje.
+            </p>
+          </div>
+
         </div>
 
-        <div className="rounded-2xl bg-green-50 p-6 text-center">
-          <h3 className="font-semibold text-green-900 text-lg mb-3">
-            Kemija
-          </h3>
-          <p className="text-blue-900 leading-relaxed">
-            Razlaga snovi na razumljiv način s primeri iz vsakdanjega življenja.
-          </p>
+        {/* KEMIJA */}
+        <div className="overflow-hidden rounded-2xl bg-white border border-green-100 shadow-sm hover:shadow-md transition">
+
+          <img
+            src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=85"
+            alt="Otroci pri raziskovanju in naravoslovju"
+            className="w-full h-48 object-cover"
+          />
+
+          <div className="p-6 text-center">
+            <h3
+              className="font-semibold text-green-900 text-xl mb-3"
+              style={{ fontFamily: "serif" }}
+            >
+              Kemija
+            </h3>
+
+            <p className="text-blue-900 leading-relaxed">
+              Razlaga snovi na razumljiv način s primeri iz vsakdanjega življenja.
+            </p>
+          </div>
+
         </div>
 
       </div>
 
-      <p className="text-center text-blue-900 leading-relaxed mb-8">
+      <p className="text-center text-blue-900 leading-relaxed mb-8 max-w-3xl mx-auto">
         Posebno pozornost namenjamo učenju skozi razumevanje, praktične
         primere, zgodbe, ustvarjalnost in povezovanje znanja z življenjem.
       </p>
@@ -582,7 +629,6 @@ export default function Website() {
     </div>
   </div>
 </section>
-      
       {/* ERASMUS+ */}
       <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
         <SectionTitle>🌍 ERASMUS+</SectionTitle>
