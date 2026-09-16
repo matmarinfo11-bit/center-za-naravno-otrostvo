@@ -585,15 +585,14 @@ export default function Website() {
 
 
 
-    {/* UČNA PODPORA OTROKOM */}
-
+   {/* UČNA PODPORA OTROKOM */}
 <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
   <div className="max-w-5xl mx-auto">
     <div
-      className="rounded-3xl border p-8 md:p-12 shadow-[0_10px_30px_rgba(90,80,50,0.08)]"
+      className="rounded-3xl border p-8 md:p-12 shadow-lg"
       style={{
-        backgroundColor: "#F7F3E8",
-        borderColor: "#B8C8A8",
+        backgroundColor: "#F3EBDD",
+        borderColor: "#AFC3A5",
       }}
     >
       <div className="mb-8 flex justify-center">
@@ -618,7 +617,7 @@ export default function Website() {
       <p
         className="text-center text-lg md:text-xl mb-8 italic"
         style={{
-          color: "#6B765F",
+          color: "#7A6A55",
           fontFamily: "Georgia, serif",
         }}
       >
@@ -665,12 +664,16 @@ export default function Website() {
           <ul className="space-y-3 list-disc pl-6">
             <li>individualno podporo glede na otrokove potrebe</li>
             <li>pomoč pri razumevanju učne snovi</li>
+            <li>slovenščino</li>
+            <li>matematiko</li>
+            <li>angleščino</li>
+            <li>nemščino</li>
+            <li>naravoslovje</li>
+            <li>družboslovje</li>
             <li>učenje skozi ustvarjalnost, umetnost in doživljanje</li>
             <li>razvijanje samozavesti in notranje motivacije</li>
             <li>spodbujanje veselja do učenja</li>
-            <li>
-              povezovanje učenja z gibanjem, naravo in vsakdanjim življenjem
-            </li>
+            <li>povezovanje učenja z gibanjem, naravo in vsakdanjim življenjem</li>
             <li>sodelovanje s starši</li>
           </ul>
         </div>
@@ -689,7 +692,7 @@ export default function Website() {
       </div>
     </div>
   </div>
-</section> {/* ERASMUS+ */}
+</section>
       <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
         <SectionTitle>🌍 ERASMUS+</SectionTitle>
         <div className="grid md:grid-cols-2 gap-8">
