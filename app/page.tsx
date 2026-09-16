@@ -1,235 +1,85 @@
-"use client";
+<div className="mt-10 mb-10">
+  <h3
+    className="text-xl md:text-2xl mb-6 text-center"
+    style={{
+      color: "#315C45",
+      fontFamily: "Georgia, serif",
+      fontWeight: 600,
+    }}
+  >
+    Predmeti, pri katerih nudimo učno podporo
+  </h3>
 
-import React from "react";
-import { Cormorant_Garamond } from "next/font/google";
-
-const waldorfFont = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-waldorf",
-});
-
-function SectionTitle({ children }: { children: React.ReactNode }) {
-  return (
-    <h2
-      className="text-4xl md:text-6xl font-bold text-center mb-12 tracking-wide"
-      style={{
-        fontFamily: "var(--font-waldorf), Georgia, serif",
-        background:
-          "linear-gradient(90deg,#7c9a6d,#d4a373,#e5989b,#a8dadc,#bdb2ff)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-      }}
-    >
-      {children}
-    </h2>
-  );
-}
-
-function Card({ children }: { children: React.ReactNode }) {
-  return (
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
     <div
-      className="relative rounded-[30px] p-7 shadow-xl overflow-hidden"
+      className="rounded-2xl p-6 text-center border shadow-sm"
       style={{
-        background: "linear-gradient(135deg,#fefae0,#f1f5f9,#ecfccb)",
+        backgroundColor: "#E8EFE1",
+        borderColor: "#B8C8A8",
       }}
     >
-      {/* ročno narisan okvir */}
-      <div
-        className="pointer-events-none absolute inset-0 rounded-[30px] border border-black/10"
-        style={{ transform: "rotate(-0.5deg)" }}
-      />
-
-      <div className="relative z-10">{children}</div>
-    </div>
-  );
-}
-
-function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
-  return (
-    <input
-      {...props}
-      className="w-full p-2 rounded-xl border border-black/10 bg-white/70"
-    />
-  );
-}
-
-function Logo() {
-  return (
-    <div className="flex flex-col items-center gap-1">
-      <svg viewBox="0 0 220 120" className="w-24 h-16">
-        <defs>
-          <linearGradient id="rainbowSoft" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#fca5a5" />
-            <stop offset="25%" stopColor="#fde68a" />
-            <stop offset="50%" stopColor="#86efac" />
-            <stop offset="75%" stopColor="#a5f3fc" />
-            <stop offset="100%" stopColor="#c4b5fd" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M10 80 Q60 10 110 40 Q160 70 210 30"
-          stroke="url(#rainbowSoft)"
-          strokeWidth="10"
-          fill="none"
-          strokeLinecap="round"
-        />
-      </svg>
-
-      <div className="text-center">
-        <div
-          className="text-2xl md:text-3xl font-bold"
-          style={{
-            fontFamily: "var(--font-waldorf), Georgia, serif",
-            background:
-              "linear-gradient(90deg,#8fae7a,#e0b27f,#f1a7b5,#9edee6,#c7c2ff)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          MATMAR
-        </div>
-        <div className="text-xs text-green-800">CENTER ZA NARAVNO OTROŠTVO</div>
-      </div>
-    </div>
-  );
-}
-
-function FoodBadges() {
-  return (
-    <div className="flex gap-4 mt-4 justify-center flex-wrap">
-      <div className="flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full shadow text-sm font-semibold text-green-800">
-        🟢 EKO
-      </div>
-      <div className="flex items-center gap-2 px-4 py-2 bg-yellow-100 rounded-full shadow text-sm font-semibold text-yellow-800">
-        🟡 DEMETER
-      </div>
-      <div className="flex items-center gap-2 px-4 py-2 bg-emerald-100 rounded-full shadow text-sm font-semibold text-emerald-800">
-        🌿 LASTNA PRIDELAVA
-      </div>
-
-      {/* PREMIUM BIO PEČAT */}
-      <div className="flex items-center justify-center w-24 h-24 rounded-full bg-green-200 text-green-900 font-bold text-xs shadow-xl border-4 border-green-300 text-center">
-        BIO
-        <br />
-        CERT
-      </div>
-    </div>
-  );
-}
-
-export default function Website() {
-  const buildMailto = (type: string, fields: Record<string, string>) => {
-    const subject = encodeURIComponent(`Prijava - ${type}`);
-    const body = encodeURIComponent(
-      Object.entries(fields)
-        .map(([k, v]) => `${k}: ${v || ""}`)
-        .join("\n")
-    );
-    return `https://mail.google.com/mail/?view=cm&fs=1&to=prijave@centerzanaravnootroštvo.si&su=${subject}&body=${body}`;
-  };
-
-  return (
-    <div className={`${waldorfFont.variable} min-h-screen relative bg-gradient-to-br from-rose-50 via-amber-50 to-emerald-50`}>
-            {/* WATERMARK MATMAR - OZADJE CELOTNE STRANI */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center z-0">
-        <div
-          className="text-[160px] md:text-[240px] lg:text-[300px] font-bold tracking-widest select-none"
-          style={{
-            fontFamily: "var(--font-waldorf), Georgia, serif",
-            background:
-              "linear-gradient(90deg,#7c9a6d,#d4a373,#e5989b,#a8dadc,#bdb2ff)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            opacity: 0.18,
-            transform: "rotate(-8deg)",
-            filter: "blur(0.5px)",
-            textShadow: "0 0 20px rgba(0,0,0,0.08)",
-          }}
-        >
-          MATMAR
-        </div>
-      </div>
-
-      {/* DODATNI UMETNIŠKI WATERMARK (ponovitev) */}
-      <div className="pointer-events-none absolute inset-0 flex items-end justify-end pr-10 pb-10 z-0">
-        <div
-          className="text-[80px] md:text-[120px] font-bold select-none"
-          style={{
-            fontFamily: "var(--font-waldorf), Georgia, serif",
-            color: "rgba(120,140,120,0.12)",
-            transform: "rotate(-12deg)",
-          }}
-        >
-          MATMAR
-        </div>
-      </div>
-
-      {/* WATERMARK VZOREC PO CELEM + ZGORAJ */}
-      <div className="pointer-events-none absolute inset-0 z-0 opacity-10">
-        <div className="w-full h-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20 p-10">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <div
-              key={i}
-              className="text-[60px] md:text-[90px] font-bold select-none text-center"
-              style={{
-                fontFamily: "var(--font-waldorf), Georgia, serif",
-                color: "rgba(120,140,120,0.25)",
-                transform: i % 2 === 0 ? "rotate(-8deg)" : "rotate(8deg)",
-              }}
-            >
-              MATMAR
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* EU FINANCING BAR */}
-      <div
-        className="w-full relative z-10 border-b border-blue-300"
-        style={{ background: "#1e3a8a" }}
+      <h4
+        className="text-xl mb-3"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
       >
-        <div className="max-w-6xl mx-auto flex items-center justify-center gap-4 py-3 px-4">
-          {/* EU LOGO */}
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
-            alt="EU logo"
-            className="w-10 h-7 object-contain"
-          />
+        Matematika
+      </h4>
+      <p style={{ color: "#4E5B4A" }}>
+        Razumevanje matematičnih vsebin, pomoč pri nalogah in razvijanje
+        matematičnega mišljenja.
+      </p>
+    </div>
 
-          <div className="text-white font-semibold tracking-wide text-sm md:text-base">
-            Projekt sofinancira Evropska unija – Erasmus+
-          </div>
-        </div>
-      </div>
+    <div
+      className="rounded-2xl p-6 text-center border shadow-sm"
+      style={{
+        backgroundColor: "#F1E8D8",
+        borderColor: "#D2BFA3",
+      }}
+    >
+      <h4
+        className="text-xl mb-3"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
+      >
+        Slovenščina
+      </h4>
+      <p style={{ color: "#4E5B4A" }}>
+        Pomoč pri branju, pisanju, slovnici, razumevanju besedil in izražanju.
+      </p>
+    </div>
 
-      {/* HEADER */}
-      <div className="p-4 flex justify-between items-center relative z-10">
-        <Logo />
-        <div className="text-sm text-green-800">Erasmus+</div>
-      </div>
-
-      {/* HERO */}
-      <section className="text-center px-6 py-20 relative z-10">
-        {/* ROČNA MAVRICA ZA NASLOVOM */}
-        <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-10 opacity-30 z-0">
-          <svg viewBox="0 0 700 220" className="w-[90vw] max-w-4xl">
-            <path
-              d="M20 200 Q350 -40 680 200"
-              stroke="#fca5a5"
-              strokeWidth="18"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M60 200 Q350 -10 640 200"
-              stroke="#fde68a"
-              strokeWidth="18"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M100 200 Q350 20 600 200"
+    <div
+      className="rounded-2xl p-6 text-center border shadow-sm"
+      style={{
+        backgroundColor: "#E5EDE8",
+        borderColor: "#B8C8A8",
+      }}
+    >
+      <h4
+        className="text-xl mb-3"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
+      >
+        Kemija
+      </h4>
+      <p style={{ color: "#4E5B4A" }}>
+        Razumevanje osnov kemije, pomoč pri učni snovi ter povezovanje
+        naravoslovnih vsebin z vsakdanjim življenjem.
+      </p>
+    </div>
+  </div>
+</div>
               stroke="#86efac"
               strokeWidth="18"
               fill="none"
@@ -658,7 +508,238 @@ export default function Website() {
               fontWeight: 600,
             }}
           >
-            Individualna podpora vključuje:
+        <div className="mt-10 mb-10">
+  <h3
+    className="text-xl md:text-2xl mb-6 text-center"
+    style={{
+      color: "#315C45",
+      fontFamily: "Georgia, serif",
+      fontWeight: 600,
+    }}
+  >
+    Predmeti, pri katerih nudimo učno podporo
+  </h3>
+
+  <div className="grid md:grid-cols-3 gap-6">
+
+    {/* MATEMATIKA */}
+    <div
+      className="rounded-2xl p-6 text-center border shadow-sm"
+      style={{
+        backgroundColor: "#E8EFE5",
+        borderColor: "#B8C8A8",
+      }}
+    >
+      <h4
+        className="text-xl mb-3"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
+      >
+        Matematika
+      </h4>
+
+      <p style={{ color: "#4E5B4A" }}>
+        Razumevanje matematičnih vsebin, pomoč pri nalogah in razvijanje
+        matematičnega mišljenja.
+      </p>
+    </div>
+
+    {/* SLOVENŠČINA */}
+    <div
+      className="rounded-2xl p-6 text-center border shadow-sm"
+      style={{
+        backgroundColor: "#F1E8D8",
+        borderColor: "#D2BFA3",
+      }}
+    >
+      <h4
+        className="text-xl mb-3"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
+      >
+        Slovenščina
+      </h4>
+
+      <p style={{ color: "#4E5B4A" }}>
+        Pomoč pri branju, pisanju, slovnici, razumevanju besedil in izražanju.
+      </p>
+    </div>
+
+    {/* KEMIJA */}
+    <div
+      className="rounded-2xl p-6 text-center border shadow-sm"
+      style={{
+        backgroundColor: "#E5EDE8",
+        borderColor: "#B8C8A8",
+      }}
+    >
+      <h4
+        className="text-xl mb-3"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
+      >
+        Kemija
+      </h4>
+
+      <p style={{ color: "#4E5B4A" }}>
+        Razumevanje osnov kemije, pomoč pri učni snovi ter povezovanje
+        naravoslovnih vsebin z vsakdanjim življenjem.
+      </p>
+    </div>
+
+  </div>
+</div>
+      <p style={{ color: "#4E5B4A" }}>
+        Razumevanje matematičnih vsebin, pomoč pri nalogah in razvijanje
+        matematičnega mišljenja.
+      </p>
+    </div>
+
+    <div
+      className="rounded-2xl p-6 text-center border shadow-sm"
+      style={{
+        backgroundColor: "#F1E8D8",
+        borderColor: "#D2BFA3",
+      }}
+    >
+      <h4
+        className="text-xl mb-3"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
+      >
+        Slovenščina
+      </h4>
+
+      <p style={{ color: "#4E5B4A" }}>
+        Pomoč pri branju, pisanju, slovnici, razumevanju besedil in izražanju.
+      </p>
+    </div>
+
+    <div
+      className="rounded-2xl p-6 text-center border shadow-sm"
+      style={{
+        backgroundColor: "#E5EDE8",
+        borderColor: "#B8C8A8",
+      }}
+    >
+      <h4
+        className="text-xl mb-3"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
+      >
+        Kemija
+      </h4>
+
+      <p style={{ color: "#4E5B4A" }}>
+        Razumevanje kemijskih pojmov, procesov, formul in povezovanje teorije
+        z vsakdanjim življenjem.
+      </p>
+    </div>
+
+  </div>
+</div>
+        color: "#315C45",
+        fontFamily: "Georgia, serif",
+        fontWeight: 600,
+      }}
+    >
+      Kemija
+    </h4>
+
+    <p style={{ color: "#4E5B4A" }}>
+      Razumevanje kemijskih pojmov, pomoč pri učenju in povezovanje snovi
+      s praktičnimi primeri.
+    </p>
+  </div>
+
+</div>
+  </h3>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <div
+      className="rounded-2xl p-6 text-center border shadow-sm"
+      style={{
+        backgroundColor: "#E8EFE1",
+        borderColor: "#B8C8A8",
+      }}
+    >
+      <h4
+        className="text-xl mb-3"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
+      >
+        Matematika
+      </h4>
+      <p style={{ color: "#4E5B4A" }}>
+        Razumevanje matematičnih vsebin, pomoč pri nalogah in razvijanje
+        matematičnega mišljenja.
+      </p>
+    </div>
+
+    <div
+      className="rounded-2xl p-6 text-center border shadow-sm"
+      style={{
+        backgroundColor: "#F1E8D8",
+        borderColor: "#D2BFA3",
+      }}
+    >
+      <h4
+        className="text-xl mb-3"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
+      >
+        Slovenščina
+      </h4>
+      <p style={{ color: "#4E5B4A" }}>
+        Pomoč pri branju, pisanju, slovnici, razumevanju besedil in izražanju.
+      </p>
+    </div>
+
+    <div
+      className="rounded-2xl p-6 text-center border shadow-sm"
+      style={{
+        backgroundColor: "#E5EDE8",
+        borderColor: "#B8C8A8",
+      }}
+    >
+      <h4
+        className="text-xl mb-3"
+        style={{
+          color: "#315C45",
+          fontFamily: "Georgia, serif",
+          fontWeight: 600,
+        }}
+      >
+        Kemija
+      </h4>
+      <p style={{ color: "#4E5B4A" }}>
+        Razumevanje kemijskih pojmov, procesov, formul in povezovanje teorije
+        z vsakdanjim življenjem.
+      </p>
+    </div>
+  </div>
+</div> Individualna podpora vključuje:
           </h3>
 
           <ul className="space-y-3 list-disc pl-6">
