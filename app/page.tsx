@@ -80,9 +80,9 @@
     </div>
   </div>
 </div>
+              <path
               stroke="#86efac"
-              strokeWidth="18"
-              fill="none"
+               strokeWidth="18"
               strokeLinecap="round"
             />
             <path
