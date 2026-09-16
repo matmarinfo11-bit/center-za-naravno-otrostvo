@@ -29,7 +29,7 @@
         Matematika
       </h4>
       <p style={{ color: "#4E5B4A" }}>
-        Razumevanje matematičnih vsebin, pomoč pri nalogah in razvijanje
+        Razumevanje matemati
         matematičnega mišljenja.
       </p>
     </div>
@@ -424,320 +424,146 @@
                 in izkustvenega učenja otrokom pomagamo, da učne vsebine
                 razumejo na njim lasten, doživljajski način.
               </p>
-
-             
-
-              
-           
-
-        
-
-
-
-
-   {/* UČNA PODPORA OTROKOM */}
-<section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
-  <div className="max-w-5xl mx-auto">
-    <div
-      className="rounded-3xl border p-8 md:p-12 shadow-lg"
-      style={{
-        backgroundColor: "#F3EBDD",
-        borderColor: "#AFC3A5",
-      }}
-    >
-      <div className="mb-8 flex justify-center">
-        <img
-          src="/ucna-podpora.jpg"
-          alt="Individualna učna podpora otrokom"
-          className="w-full max-w-3xl rounded-3xl shadow-md object-cover"
-        />
-      </div>
-
-      <h2
-        className="text-3xl md:text-4xl text-center mb-4"
-        style={{
-          color: "#315C45",
-          fontFamily: "Georgia, serif",
-          fontWeight: 600,
-        }}
-      >
-        Učna podpora otrokom
-      </h2>
-
-      <p
-        className="text-center text-lg md:text-xl mb-8 italic"
-        style={{
-          color: "#7A6A55",
-          fontFamily: "Georgia, serif",
-        }}
-      >
-        S spoštovanjem do otrokovega individualnega razvoja
-      </p>
-
-      <div
-        className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed space-y-5"
-        style={{
-          color: "#4E5B4A",
-        }}
-      >
-        <p>
-          Otrokom nudimo individualno učno podporo v spodbudnem in varnem
-          okolju, kjer lahko razvijajo svoje sposobnosti, zaupanje vase in
-          veselje do učenja.
-        </p>
-
-        <p>
-          Pri delu izhajamo iz otrokovih potreb, zanimanj, sposobnosti in
-          njegovega edinstvenega načina učenja. Učenje razumemo kot celosten
-          proces, ki vključuje mišljenje, čutenje, ustvarjalnost, gibanje in
-          doživljanje.
-        </p>
-
-        <p>
-          Z elementi waldorfske pedagogike, umetnosti, naravnih materialov in
-          izkustvenega učenja otrokom pomagamo, da učne vsebine razumejo na
-          njim lasten, doživljajski način.
-        </p>
-
-        <div className="pt-4">
-          <h3
-            className="text-xl md:text-2xl mb-4"
-            style={{
-              color: "#315C45",
-              fontFamily: "Georgia, serif",
-              fontWeight: 600,
-            }}
-          >
-        <div className="mt-10 mb-10">
+<div className="mt-10 mb-10">
   <h3
     className="text-xl md:text-2xl mb-6 text-center"
     style={{
       color: "#315C45",
-      fontFamily: "Georgia, serif",
-      fontWeight: 600,
+      fontFamily: "Arial, sans-serif",
+      fontWeight: 700,
+      fontSize: "clamp(1.4rem, 3vw, 2rem)",
     }}
   >
     Predmeti, pri katerih nudimo učno podporo
   </h3>
 
-  <div className="grid md:grid-cols-3 gap-6">
-
-    {/* MATEMATIKA */}
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
     <div
-      className="rounded-2xl p-6 text-center border shadow-sm"
+      className="rounded-2xl p-7 text-center border shadow-md"
       style={{
-        backgroundColor: "#E8EFE5",
-        borderColor: "#B8C8A8",
+        backgroundColor: "#E8EFE1",
+        borderColor: "#8FAF8A",
       }}
     >
       <h4
-        className="text-xl mb-3"
         style={{
-          color: "#315C45",
-          fontFamily: "Georgia, serif",
-          fontWeight: 600,
+          color: "#234D35",
+          fontFamily: "Arial, sans-serif",
+          fontWeight: 700,
+          fontSize: "1.5rem",
+          marginBottom: "12px",
         }}
       >
         Matematika
       </h4>
 
-      <p style={{ color: "#4E5B4A" }}>
+      <p
+        style={{
+          color: "#26382B",
+          fontFamily: "Arial, sans-serif",
+          fontSize: "1.05rem",
+          lineHeight: 1.6,
+        }}
+      >
         Razumevanje matematičnih vsebin, pomoč pri nalogah in razvijanje
         matematičnega mišljenja.
       </p>
     </div>
 
-    {/* SLOVENŠČINA */}
     <div
-      className="rounded-2xl p-6 text-center border shadow-sm"
+      className="rounded-2xl p-7 text-center border shadow-md"
       style={{
-        backgroundColor: "#F1E8D8",
-        borderColor: "#D2BFA3",
+        backgroundColor: "#F3E7D3",
+        borderColor: "#C9A875",
       }}
     >
       <h4
-        className="text-xl mb-3"
         style={{
-          color: "#315C45",
-          fontFamily: "Georgia, serif",
-          fontWeight: 600,
+          color: "#234D35",
+          fontFamily: "Arial, sans-serif",
+          fontWeight: 700,
+          fontSize: "1.5rem",
+          marginBottom: "12px",
         }}
       >
         Slovenščina
       </h4>
 
-      <p style={{ color: "#4E5B4A" }}>
+      <p
+        style={{
+          color: "#26382B",
+          fontFamily: "Arial, sans-serif",
+          fontSize: "1.05rem",
+          lineHeight: 1.6,
+        }}
+      >
         Pomoč pri branju, pisanju, slovnici, razumevanju besedil in izražanju.
       </p>
     </div>
 
-    {/* KEMIJA */}
     <div
-      className="rounded-2xl p-6 text-center border shadow-sm"
+      className="rounded-2xl p-7 text-center border shadow-md"
       style={{
-        backgroundColor: "#E5EDE8",
-        borderColor: "#B8C8A8",
+        backgroundColor: "#E2EEE8",
+        borderColor: "#8FAF8A",
       }}
     >
       <h4
-        className="text-xl mb-3"
         style={{
-          color: "#315C45",
-          fontFamily: "Georgia, serif",
-          fontWeight: 600,
+          color: "#234D35",
+          fontFamily: "Arial, sans-serif",
+          fontWeight: 700,
+          fontSize: "1.5rem",
+          marginBottom: "12px",
         }}
       >
         Kemija
       </h4>
 
-      <p style={{ color: "#4E5B4A" }}>
+      <p
+        style={{
+          color: "#26382B",
+          fontFamily: "Arial, sans-serif",
+          fontSize: "1.05rem",
+          lineHeight: 1.6,
+        }}
+      >
         Razumevanje osnov kemije, pomoč pri učni snovi ter povezovanje
         naravoslovnih vsebin z vsakdanjim življenjem.
       </p>
     </div>
-
   </div>
 </div>
-      <p style={{ color: "#4E5B4A" }}>
-        Razumevanje matematičnih vsebin, pomoč pri nalogah in razvijanje
-        matematičnega mišljenja.
-      </p>
-    </div>
-
-    <div
-      className="rounded-2xl p-6 text-center border shadow-sm"
-      style={{
-        backgroundColor: "#F1E8D8",
-        borderColor: "#D2BFA3",
-      }}
-    >
-      <h4
-        className="text-xl mb-3"
-        style={{
-          color: "#315C45",
-          fontFamily: "Georgia, serif",
-          fontWeight: 600,
-        }}
-      >
-        Slovenščina
-      </h4>
-
-      <p style={{ color: "#4E5B4A" }}>
-        Pomoč pri branju, pisanju, slovnici, razumevanju besedil in izražanju.
-      </p>
-    </div>
-
-    <div
-      className="rounded-2xl p-6 text-center border shadow-sm"
-      style={{
-        backgroundColor: "#E5EDE8",
-        borderColor: "#B8C8A8",
-      }}
-    >
-      <h4
-        className="text-xl mb-3"
-        style={{
-          color: "#315C45",
-          fontFamily: "Georgia, serif",
-          fontWeight: 600,
-        }}
-      >
-        Kemija
-      </h4>
-
-      <p style={{ color: "#4E5B4A" }}>
-        Razumevanje kemijskih pojmov, procesov, formul in povezovanje teorije
-        z vsakdanjim življenjem.
-      </p>
-    </div>
-
-  </div>
-</div>
-        color: "#315C45",
-        fontFamily: "Georgia, serif",
-        fontWeight: 600,
-      }}
-    >
-      Kemija
-    </h4>
-
-    <p style={{ color: "#4E5B4A" }}>
-      Razumevanje kemijskih pojmov, pomoč pri učenju in povezovanje snovi
-      s praktičnimi primeri.
-    </p>
-  </div>
-
-</div>
-  </h3>
-
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-    <div
-      className="rounded-2xl p-6 text-center border shadow-sm"
-      style={{
-        backgroundColor: "#E8EFE1",
-        borderColor: "#B8C8A8",
-      }}
-    >
-      <h4
-        className="text-xl mb-3"
-        style={{
-          color: "#315C45",
-          fontFamily: "Georgia, serif",
-          fontWeight: 600,
-        }}
-      >
-        Matematika
-      </h4>
-      <p style={{ color: "#4E5B4A" }}>
-        Razumevanje matematičnih vsebin, pomoč pri nalogah in razvijanje
-        matematičnega mišljenja.
-      </p>
-    </div>
-
-    <div
-      className="rounded-2xl p-6 text-center border shadow-sm"
-      style={{
-        backgroundColor: "#F1E8D8",
-        borderColor: "#D2BFA3",
-      }}
-    >
-      <h4
-        className="text-xl mb-3"
-        style={{
-          color: "#315C45",
-          fontFamily: "Georgia, serif",
-          fontWeight: 600,
-        }}
-      >
-        Slovenščina
-      </h4>
-      <p style={{ color: "#4E5B4A" }}>
-        Pomoč pri branju, pisanju, slovnici, razumevanju besedil in izražanju.
-      </p>
-    </div>
-
-    <div
-      className="rounded-2xl p-6 text-center border shadow-sm"
-      style={{
-        backgroundColor: "#E5EDE8",
-        borderColor: "#B8C8A8",
-      }}
-    >
-      <h4
-        className="text-xl mb-3"
-        style={{
-          color: "#315C45",
-          fontFamily: "Georgia, serif",
-          fontWeight: 600,
-        }}
-      >
-        Kemija
-      </h4>
-      <p style={{ color: "#4E5B4A" }}>
-        Razumevanje kemijskih pojmov, procesov, formul in povezovanje teorije
-        z vsakdanjim življenjem.
-      </p>
-    </div>
+          >
+                   <div className="pt-4">
+              <h3
+                className="text-xl md:text-2xl mb-5"
+                style={{
+                  color: "#315C45",
+                  fontFamily: "Arial, sans-serif",
+                  fontWeight: 700,
+                }}
+              >
+                Individualna podpora vključuje:
+</h3>
+              <ul className="space-y-3 list-disc pl-6">
+                <li>
+                  prilagojeno razlago učne snovi glede na potrebe otroka,
+                </li>
+                <li>
+                  pomoč pri razumevanju zahtevnejših vsebin,
+                </li>
+                <li>
+                  razvijanje učnih navad, samozavesti in samostojnosti,
+                </li>
+                <li>
+                  mirno, spodbudno in otroku prilagojeno učno okolje,
+                </li>
+                <li>
+                  upoštevanje otrokovega tempa, predznanja in načina učenja.
+                </li>
+              </ul>
+            </div>
   </div>
 </div> Individualna podpora vključuje:
           </h3>
