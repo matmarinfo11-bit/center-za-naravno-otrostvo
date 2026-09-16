@@ -60,26 +60,7 @@
       className="rounded-2xl p-6 text-center border shadow-sm"
       style={{
         backgroundColor: "#E5EDE8",
-        borderColor: "#B8C8A8",
-      }}
-    >
-      <h4
-        className="text-xl mb-3"
-        style={{
-          color: "#315C45",
-          fontFamily: "Georgia, serif",
-          fontWeight: 600,
-        }}
-      >
-        Kemija
-      </h4>
-      <p style={{ color: "#4E5B4A" }}>
-        Razumevanje osnov kemije, pomoč pri učni snovi ter povezovanje
-        naravoslovnih vsebin z vsakdanjim življenjem.
-      </p>
-    </div>
-  </div>
-</div>
+       
                            <path
                 d="M60 200 Q250 20 440 200"
                 stroke="#86efac"
