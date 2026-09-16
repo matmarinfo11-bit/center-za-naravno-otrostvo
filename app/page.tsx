@@ -80,11 +80,13 @@
     </div>
   </div>
 </div>
-              <path
-              stroke="#86efac"
-               strokeWidth="18"
-              strokeLinecap="round"
-            />
+                           <path
+                d="M60 200 Q250 20 440 200"
+                stroke="#86efac"
+                strokeWidth="18"
+                fill="none"
+                strokeLinecap="round"
+              />
             <path
               d="M140 200 Q350 50 560 200"
               stroke="#a5f3fc"
