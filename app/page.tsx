@@ -312,132 +312,127 @@
                 Otrokom nudimo individualno učno podporo v spodbudnem in varnem
                 okolju, kjer lahko razvijajo svoje sposobnosti, zaupanje vase
                 in veselje do učenja.
-              </p>
-
-              <p className="mb-5">
-                Pri delu izhajamo iz otrokovih potreb, zanimanj, sposobnosti in
-                njegovega edinstvenega načina učenja. Učenje razumemo kot
-                celosten proces, ki vključuje mišljenje, čutenje, ustvarjalnost,
-                gibanje in doživljanje.
-              </p>
-
+         </p>       
+        <p className="mb-5">   
+          Pri delu izhajamo iz otrokovih potreb, zanimanj, sposobnosti in
+          njegovega edinstvenega načina učenja. Učenje razumemo kot
+          celosten proces, ki vključuje mišljenje, čutenje, ustvarjalnost,
+          gibanje in doživljanje.
+          </p>
               <p className="mb-8">
                 Z elementi waldorfske pedagogike, umetnosti, naravnih materialov
                 in izkustvenega učenja otrokom pomagamo, da učne vsebine
                 razumejo na njim lasten, doživljajski način.
-              </p>
-<div className="mt-10 mb-10">
-  <h3
-    className="text-xl md:text-2xl mb-6 text-center"
+                </p>
+              <div className="mt-10 mb-10">
+                <h3
+                  className="text-xl md:text-2xl mb-6 text-center"
+                  style={{
+                    color: "#315C45",
+                    fontFamily: "Arial, sans-serif",
+                    fontWeight: 700,
+                    fontSize: "clamp(1.4rem, 3vw, 2rem)",
+                    }}
+                  >
+                  Predmeti, pri katerih nudimo učno podporo
+                  </h3>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div
+    className="rounded-2xl p-7 text-center border shadow-md"
     style={{
-      color: "#315C45",
-      fontFamily: "Arial, sans-serif",
-      fontWeight: 700,
-      fontSize: "clamp(1.4rem, 3vw, 2rem)",
+      backgroundColor: "#E8EFE1",
+      borderColor: "#8FAF8A",
     }}
   >
-    Predmeti, pri katerih nudimo učno podporo
-  </h3>
-
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div
-      className="rounded-2xl p-7 text-center border shadow-md"
+    <h4
       style={{
-        backgroundColor: "#E8EFE1",
-        borderColor: "#8FAF8A",
+        color: "#234D35",
+        fontFamily: "Arial, sans-serif",
+        fontWeight: 700,
+        fontSize: "1.5rem",
+        marginBottom: "12px",
       }}
     >
-      <h4
-        style={{
-          color: "#234D35",
-          fontFamily: "Arial, sans-serif",
-          fontWeight: 700,
-          fontSize: "1.5rem",
-          marginBottom: "12px",
-        }}
-      >
-        Matematika
-      </h4>
-
-      <p
-        style={{
-          color: "#26382B",
-          fontFamily: "Arial, sans-serif",
-          fontSize: "1.05rem",
-          lineHeight: 1.6,
-        }}
-      >
-        Razumevanje matematičnih vsebin, pomoč pri nalogah in razvijanje
-        matematičnega mišljenja.
-      </p>
-    </div>
-
-    <div
-      className="rounded-2xl p-7 text-center border shadow-md"
+      Matematika
+    </h4>
+    <p
       style={{
-        backgroundColor: "#F3E7D3",
-        borderColor: "#C9A875",
+        color: "#26382B",
+        fontFamily: "Arial, sans-serif",
+        fontSize: "1.05rem",
+        lineHeight: 1.6,
       }}
     >
-      <h4
-        style={{
-          color: "#234D35",
-          fontFamily: "Arial, sans-serif",
-          fontWeight: 700,
-          fontSize: "1.5rem",
-          marginBottom: "12px",
-        }}
-      >
-        Slovenščina
-      </h4>
+      Razumevanje matematičnih vsebin, pomoč pri nalogah in razvijanje
+      matematičnega mišljenja.
+    </p>
+  </div>
 
-      <p
-        style={{
-          color: "#26382B",
-          fontFamily: "Arial, sans-serif",
-          fontSize: "1.05rem",
-          lineHeight: 1.6,
-        }}
-      >
-        Pomoč pri branju, pisanju, slovnici, razumevanju besedil in izražanju.
-      </p>
-    </div>
-
-    <div
-      className="rounded-2xl p-7 text-center border shadow-md"
+  <div
+    className="rounded-2xl p-7 text-center border shadow-md"
+    style={{
+      backgroundColor: "#F3E7D3",
+      borderColor: "#C9A875",
+    }}
+  >
+    <h4
       style={{
-        backgroundColor: "#E2EEE8",
-        borderColor: "#8FAF8A",
+        color: "#234D35",
+        fontFamily: "Arial, sans-serif",
+        fontWeight: 700,
+        fontSize: "1.5rem",
+        marginBottom: "12px",
       }}
     >
-      <h4
-        style={{
-          color: "#234D35",
-          fontFamily: "Arial, sans-serif",
-          fontWeight: 700,
-          fontSize: "1.5rem",
-          marginBottom: "12px",
-        }}
-      >
-        Kemija
-      </h4>
+      Slovenščina
+    </h4>
+    <p
+      style={{
+        color: "#26382B",
+        fontFamily: "Arial, sans-serif",
+        fontSize: "1.05rem",
+        lineHeight: 1.6,
+      }}
+    >
+      Pomoč pri branju, pisanju, slovnici, razumevanju besedil in izražanju.
+    </p>
+  </div>
 
-      <p
-        style={{
-          color: "#26382B",
-          fontFamily: "Arial, sans-serif",
-          fontSize: "1.05rem",
-          lineHeight: 1.6,
-        }}
-      >
-        Razumevanje osnov kemije, pomoč pri učni snovi ter povezovanje
-        naravoslovnih vsebin z vsakdanjim življenjem.
-      </p>
-    </div>
+  <div
+    className="rounded-2xl p-7 text-center border shadow-md"
+    style={{
+      backgroundColor: "#E2EEE8",
+      borderColor: "#8FAF8A",
+    }}
+  >
+    <h4
+      style={{
+        color: "#234D35",
+        fontFamily: "Arial, sans-serif",
+        fontWeight: 700,
+        fontSize: "1.5rem",
+        marginBottom: "12px",
+      }}
+    >
+      Kemija
+    </h4>
+    <p
+      style={{
+        color: "#26382B",
+        fontFamily: "Arial, sans-serif",
+        fontSize: "1.05rem",
+        lineHeight: 1.6,
+      }}
+    >
+      Razumevanje osnov kemije, pomoč pri učni snovi ter povezovanje
+      naravoslovnih vsebin z vsakdanjim življenjem.
+    </p>
   </div>
 </div>
-          
-                   <div className="pt-4">
+
+              
+             
               <h3
                 className="text-xl md:text-2xl mb-5"
                 style={{
