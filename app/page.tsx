@@ -517,7 +517,7 @@
     </div>
   </div>
 </div>
-          >
+          
                    <div className="pt-4">
               <h3
                 className="text-xl md:text-2xl mb-5"
@@ -548,26 +548,8 @@
               </ul>
             </div>
   </div>
-</div> Individualna podpora vključuje:
-          </h3>
 
-          <ul className="space-y-3 list-disc pl-6">
-            <li>individualno podporo glede na otrokove potrebe</li>
-            <li>pomoč pri razumevanju učne snovi</li>
-            <li>slovenščino</li>
-            <li>matematiko</li>
-            <li>angleščino</li>
-            <li>nemščino</li>
-            <li>naravoslovje</li>
-            <li>družboslovje</li>
-            <li>učenje skozi ustvarjalnost, umetnost in doživljanje</li>
-            <li>razvijanje samozavesti in notranje motivacije</li>
-            <li>spodbujanje veselja do učenja</li>
-            <li>povezovanje učenja z gibanjem, naravo in vsakdanjim življenjem</li>
-            <li>sodelovanje s starši</li>
-          </ul>
-        </div>
-      </div>
+          
 
       <div className="mt-10 flex justify-center">
         <a
