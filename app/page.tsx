@@ -615,7 +615,7 @@
               }}
               className="mt-3 space-y-2"
             >
-              <Input name="ime" placeholder="Ime otroka" required />
+               <Input name="ime" placeholder="Ime otroka" required />
               <Input name="email" type="email" placeholder="Email" required />
               <button
                 type="submit"
