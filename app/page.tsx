@@ -74,6 +74,22 @@ export default function Home() {
           >
             Z elementi waldorfske pedagogike, biodinamike in gozdne pedagogike.
           </p>
+
+          <div className="mt-10 w-full max-w-4xl overflow-hidden rounded-3xl border border-green-900/10 bg-white/60 p-2 shadow-xl backdrop-blur-sm">
+            <video
+              className="aspect-video w-full rounded-2xl object-cover"
+              controls
+              preload="metadata"
+              playsInline
+              aria-label="Predstavitveni video Centra za naravno otroštvo"
+            >
+              <source
+                src="https://biolosko.si/Center_za_naravno_otrostvo_LOGO_PRVA_STRAN_FINAL%20(1).mp4"
+                type="video/mp4"
+              />
+              Vaš brskalnik ne podpira predvajanja videa.
+            </video>
+          </div>
         </div>
       </section>
 
