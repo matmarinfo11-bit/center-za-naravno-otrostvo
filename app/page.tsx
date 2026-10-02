@@ -84,7 +84,7 @@ export default function Home() {
               aria-label="Predstavitveni video Centra za naravno otroštvo"
             >
               <source
-                src="https://biolosko.si/Center_za_naravno_otrostvo_LOGO_PRVA_STRAN_FINAL%20(1).mp4"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/center-za-naravno-otrostvo-ZlL9auRRvFbpeLi49Srp2nNfbwlREw.mp4"
                 type="video/mp4"
               />
               Vaš brskalnik ne podpira predvajanja videa.
