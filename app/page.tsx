@@ -1,6 +1,45 @@
+"use client";
 
-              strokeLinecap="round"
-            />
+import type { InputHTMLAttributes, ReactNode } from "react";
+
+function Logo() {
+  return (
+    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-800 shadow-sm" aria-label="Center za naravno otroštvo">
+      <svg viewBox="0 0 64 64" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <path d="M32 54V20M32 28C24 20 17 20 12 21M32 36C40 28 47 28 52 29M32 20C32 13 36 9 42 8" strokeLinecap="round" />
+      </svg>
+    </div>
+  );
+}
+
+function SectionTitle({ children }: { children: ReactNode }) {
+  return <h2 className="mb-10 text-center text-4xl font-bold text-green-900">{children}</h2>;
+}
+
+function Card({ children }: { children: ReactNode }) {
+  return <article className="rounded-3xl border border-black/10 bg-white/70 p-6 shadow-lg backdrop-blur-sm">{children}</article>;
+}
+
+function Input(props: InputHTMLAttributes<HTMLInputElement>) {
+  return <input {...props} className="w-full rounded-xl border border-black/10 bg-white/70 p-2" />;
+}
+
+function FoodBadges() {
+  return <div className="mt-6 flex flex-wrap justify-center gap-2 text-sm font-semibold text-green-800"><span className="rounded-full bg-green-100 px-3 py-1">BIO</span><span className="rounded-full bg-amber-100 px-3 py-1">DOMAČE</span><span className="rounded-full bg-lime-100 px-3 py-1">SEZONSKO</span></div>;
+}
+
+function buildMailto(subject: string, fields: Record<string, string>) {
+  const body = Object.entries(fields).map(([key, value]) => `${key}: ${value}`).join("\\n");
+  return `mailto:info@centerzanaravnootroštvo.si?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+export default function Home() {
+  return (
+    <main className="min-h-screen overflow-hidden bg-[#f7f4ea] text-green-950">
+      <section className="relative mx-auto flex min-h-[620px] max-w-7xl flex-col justify-center px-6 py-20">
+        <div className="pointer-events-none absolute inset-0 opacity-30" aria-hidden="true">
+          <svg viewBox="0 0 800 500" className="h-full w-full" fill="none" stroke="#7c9a6d" strokeWidth="2">
+            <path d="M50 420C180 300 220 430 350 300S560 160 760 60" strokeLinecap="round" />
           </svg>
         </div>
 
@@ -35,6 +74,22 @@
           >
             Z elementi waldorfske pedagogike, biodinamike in gozdne pedagogike.
           </p>
+
+          <div className="mt-10 w-full max-w-4xl overflow-hidden rounded-3xl border border-green-900/10 bg-white/60 p-2 shadow-xl backdrop-blur-sm">
+            <video
+              className="aspect-video w-full rounded-2xl object-cover"
+              controls
+              preload="metadata"
+              playsInline
+              aria-label="Predstavitveni video Centra za naravno otroštvo"
+            >
+              <source
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/center-za-naravno-otrostvo-ZlL9auRRvFbpeLi49Srp2nNfbwlREw.mp4"
+                type="video/mp4"
+              />
+              Vaš brskalnik ne podpira predvajanja videa.
+            </video>
+          </div>
         </div>
       </section>
 
@@ -557,6 +612,7 @@
       </section>
 
         {/* LOČENE PRIJAVE PROGRAMOV */}
+        <section className="max-w-6xl mx-auto px-6 py-16 relative z-10">
         <div id="kontakt">
         <SectionTitle>📩 PRIJAVE</SectionTitle>
         <div className="grid md:grid-cols-2 gap-8 mt-12">
@@ -686,6 +742,6 @@
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   );
 }
