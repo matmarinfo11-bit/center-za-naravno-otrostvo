@@ -29,8 +29,21 @@ function FoodBadges() {
 }
 
 function buildMailto(subject: string, fields: Record<string, string>) {
-  const body = Object.entries(fields).map(([key, value]) => `${key}: ${value}`).join("\\n");
+  const body = Object.entries(fields)
+    .map(([key, value]) => `${key}: ${value}`)
+    .join("\n");
   return `mailto:info@centerzanaravnootroštvo.si?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+function submitMailto(form: HTMLFormElement, subject: string, fields: string[]) {
+  const values = Object.fromEntries(
+    fields.map((field) => {
+      const control = form.elements.namedItem(field) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+      return [field, control.value];
+    }),
+  );
+
+  window.location.assign(buildMailto(subject, values));
 }
 
 export default function Home() {
@@ -557,11 +570,7 @@ export default function Home() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                const f = e.target as HTMLFormElement;
-                window.location.href = buildMailto("Hospitacije", {
-                  Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
-                  Email: (f.elements.namedItem("email") as HTMLInputElement).value,
-                });
+                submitMailto(e.currentTarget, "Hospitacije", ["ime", "email"]);
               }}
               className="mt-4 space-y-2"
             >
@@ -593,11 +602,7 @@ export default function Home() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                const f = e.target as HTMLFormElement;
-                window.location.href = buildMailto("Partnerstvo", {
-                  Organizacija: (f.elements.namedItem("organizacija") as HTMLInputElement).value,
-                  Email: (f.elements.namedItem("email") as HTMLInputElement).value,
-                });
+                submitMailto(e.currentTarget, "Partnerstvo", ["organizacija", "email"]);
               }}
               className="mt-4 space-y-2"
             >
@@ -625,13 +630,7 @@ export default function Home() {
             </p>
             <form onSubmit={(e) => {
               e.preventDefault();
-              const f = e.target as HTMLFormElement;
-              window.location.href = buildMailto("Individualna učna podpora", {
-                Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
-                Email: (f.elements.namedItem("email") as HTMLInputElement).value,
-                Predmet: (f.elements.namedItem("predmet") as HTMLSelectElement).value,
-                Sporocilo: (f.elements.namedItem("sporocilo") as HTMLTextAreaElement).value,
-              });
+              submitMailto(e.currentTarget, "Individualna učna podpora", ["ime", "email", "predmet", "sporocilo"]);
             }} className="mt-4 space-y-2">
               <Input name="ime" placeholder="Ime in priimek" required />
               <Input name="email" type="email" placeholder="E-pošta" required />
@@ -657,12 +656,7 @@ export default function Home() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                const f = e.target as HTMLFormElement;
-                window.location.href = buildMailto("Varstvo", {
-                  Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
-                  Email: (f.elements.namedItem("email") as HTMLInputElement)
-                    .value,
-                });
+                submitMailto(e.currentTarget, "Varstvo", ["ime", "email"]);
               }}
               className="mt-3 space-y-2"
             >
@@ -687,12 +681,7 @@ export default function Home() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                const f = e.target as HTMLFormElement;
-                window.location.href = buildMailto("Delavnice", {
-                  Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
-                  Email: (f.elements.namedItem("email") as HTMLInputElement)
-                    .value,
-                });
+                submitMailto(e.currentTarget, "Delavnice", ["ime", "email"]);
               }}
               className="mt-3 space-y-2"
             >
