@@ -38,12 +38,18 @@ function buildMailto(subject: string, fields: Record<string, string>) {
 function submitMailto(form: HTMLFormElement, subject: string, fields: string[]) {
   const values = Object.fromEntries(
     fields.map((field) => {
-      const control = form.elements.namedItem(field) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-      return [field, control.value];
+      const control = form.elements.namedItem(field) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null;
+      return [field, control?.value ?? ""];
     }),
   );
-
-  window.location.assign(buildMailto(subject, values));
+  const mailtoUrl = buildMailto(subject, values);
+  const mailtoLink = document.createElement("a");
+  mailtoLink.href = mailtoUrl;
+  mailtoLink.setAttribute("aria-hidden", "true");
+  mailtoLink.style.display = "none";
+  document.body.appendChild(mailtoLink);
+  mailtoLink.click();
+  mailtoLink.remove();
 }
 
 export default function Home() {
