@@ -35,7 +35,10 @@ function buildMailto(subject: string, fields: Record<string, string>) {
   return `mailto:info@centerzanaravnootroštvo.si?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-function openMailto(form: HTMLFormElement, subject: string, fields: string[]) {
+function openMailto(button: HTMLButtonElement, subject: string, fields: string[]) {
+  const form = button.form;
+  if (!form) return;
+
   const values = Object.fromEntries(
     fields.map((field) => {
       const control = form.elements.namedItem(field) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null;
@@ -567,16 +570,10 @@ export default function Home() {
               <li>🌿 učenje skozi opazovanje</li>
               <li>📖 prenos dobrih praks</li>
             </ul>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                openMailto(e.currentTarget, "Hospitacije", ["ime", "email"]);
-              }}
-              className="mt-4 space-y-2"
-            >
+            <form className="mt-4 space-y-2">
               <Input name="ime" placeholder="Ime in priimek" required />
               <Input name="email" type="email" placeholder="Email" required />
-              <button type="submit" className="w-full bg-indigo-600 text-white py-2 rounded-xl">
+              <button type="button" onClick={(e) => openMailto(e.currentTarget, "Hospitacije", ["ime", "email"])} className="w-full bg-indigo-600 text-white py-2 rounded-xl">
                 Prijava
               </button>
             </form>
@@ -599,16 +596,10 @@ export default function Home() {
               <li>🇳🇱 Nizozemska</li>
               <li>🇭🇷 Hrvaška</li>
             </ul>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                openMailto(e.currentTarget, "Partnerstvo", ["organizacija", "email"]);
-              }}
-              className="mt-4 space-y-2"
-            >
+            <form className="mt-4 space-y-2">
               <Input name="organizacija" placeholder="Organizacija" required />
               <Input name="email" type="email" placeholder="Email" required />
-              <button type="submit" className="w-full bg-emerald-600 text-white py-2 rounded-xl">
+              <button type="button" onClick={(e) => openMailto(e.currentTarget, "Partnerstvo", ["organizacija", "email"])} className="w-full bg-emerald-600 text-white py-2 rounded-xl">
                 Postani partner
               </button>
             </form>
@@ -628,10 +619,7 @@ export default function Home() {
             <p className="mt-3 text-green-900">
               Prijava na individualno podporo pri matematiki, slovenščini ali kemiji.
             </p>
-            <form onSubmit={(e) => {
-              e.preventDefault();
-              openMailto(e.currentTarget, "Individualna učna podpora", ["ime", "email", "predmet", "sporocilo"]);
-            }} className="mt-4 space-y-2">
+            <form className="mt-4 space-y-2">
               <Input name="ime" placeholder="Ime in priimek" required />
               <Input name="email" type="email" placeholder="E-pošta" required />
               <select name="predmet" className="w-full p-2 rounded-xl border border-black/10 bg-white/70" required>
@@ -641,7 +629,7 @@ export default function Home() {
                 <option value="Kemija">Kemija</option>
               </select>
               <textarea name="sporocilo" placeholder="Kratko sporočilo" className="w-full p-2 rounded-xl border border-black/10 bg-white/70" rows={4} />
-              <button type="submit" className="w-full text-white py-2 rounded-xl" style={{ backgroundColor: "#B87955" }}>
+              <button type="button" onClick={(e) => openMailto(e.currentTarget, "Individualna učna podpora", ["ime", "email", "predmet", "sporocilo"])} className="w-full text-white py-2 rounded-xl" style={{ backgroundColor: "#B87955" }}>
                 Pošlji prijavo
               </button>
             </form>
@@ -653,17 +641,12 @@ export default function Home() {
             >
               🌿 Varstvo otrok
             </h3>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                openMailto(e.currentTarget, "Varstvo", ["ime", "email"]);
-              }}
-              className="mt-3 space-y-2"
-            >
+            <form className="mt-3 space-y-2">
                <Input name="ime" placeholder="Ime otroka" required />
               <Input name="email" type="email" placeholder="Email" required />
               <button
-                type="submit"
+                type="button"
+                onClick={(e) => openMailto(e.currentTarget, "Varstvo", ["ime", "email"])}
                 className="w-full bg-green-600 text-white py-2 rounded-xl"
               >
                 Prijava
@@ -678,17 +661,12 @@ export default function Home() {
             >
               🎨 Delavnice
             </h3>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                openMailto(e.currentTarget, "Delavnice", ["ime", "email"]);
-              }}
-              className="mt-3 space-y-2"
-            >
+            <form className="mt-3 space-y-2">
               <Input name="ime" placeholder="Ime otroka" required />
               <Input name="email" type="email" placeholder="Email" required />
               <button
-                type="submit"
+                type="button"
+                onClick={(e) => openMailto(e.currentTarget, "Delavnice", ["ime", "email"])}
                 className="w-full bg-amber-600 text-white py-2 rounded-xl"
               >
                 Prijava
