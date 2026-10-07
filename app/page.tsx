@@ -35,7 +35,7 @@ function buildMailto(subject: string, fields: Record<string, string>) {
   return `mailto:info@centerzanaravnootroštvo.si?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-function submitMailto(form: HTMLFormElement, subject: string, fields: string[]) {
+function openMailto(form: HTMLFormElement, subject: string, fields: string[]) {
   const values = Object.fromEntries(
     fields.map((field) => {
       const control = form.elements.namedItem(field) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null;
@@ -43,13 +43,7 @@ function submitMailto(form: HTMLFormElement, subject: string, fields: string[]) 
     }),
   );
   const mailtoUrl = buildMailto(subject, values);
-  const mailtoLink = document.createElement("a");
-  mailtoLink.href = mailtoUrl;
-  mailtoLink.setAttribute("aria-hidden", "true");
-  mailtoLink.style.display = "none";
-  document.body.appendChild(mailtoLink);
-  mailtoLink.click();
-  mailtoLink.remove();
+  window.location.href = mailtoUrl;
 }
 
 export default function Home() {
@@ -576,7 +570,7 @@ export default function Home() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                submitMailto(e.currentTarget, "Hospitacije", ["ime", "email"]);
+                openMailto(e.currentTarget, "Hospitacije", ["ime", "email"]);
               }}
               className="mt-4 space-y-2"
             >
@@ -608,7 +602,7 @@ export default function Home() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                submitMailto(e.currentTarget, "Partnerstvo", ["organizacija", "email"]);
+                openMailto(e.currentTarget, "Partnerstvo", ["organizacija", "email"]);
               }}
               className="mt-4 space-y-2"
             >
@@ -636,7 +630,7 @@ export default function Home() {
             </p>
             <form onSubmit={(e) => {
               e.preventDefault();
-              submitMailto(e.currentTarget, "Individualna učna podpora", ["ime", "email", "predmet", "sporocilo"]);
+              openMailto(e.currentTarget, "Individualna učna podpora", ["ime", "email", "predmet", "sporocilo"]);
             }} className="mt-4 space-y-2">
               <Input name="ime" placeholder="Ime in priimek" required />
               <Input name="email" type="email" placeholder="E-pošta" required />
@@ -662,7 +656,7 @@ export default function Home() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                submitMailto(e.currentTarget, "Varstvo", ["ime", "email"]);
+                openMailto(e.currentTarget, "Varstvo", ["ime", "email"]);
               }}
               className="mt-3 space-y-2"
             >
@@ -687,7 +681,7 @@ export default function Home() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                submitMailto(e.currentTarget, "Delavnice", ["ime", "email"]);
+                openMailto(e.currentTarget, "Delavnice", ["ime", "email"]);
               }}
               className="mt-3 space-y-2"
             >
