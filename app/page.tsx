@@ -35,7 +35,7 @@ function buildMailto(subject: string, fields: Record<string, string>) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f7f4ea] text-green-950">
+    <main data-page="home" className="min-h-screen overflow-hidden bg-[#f7f4ea] text-green-950">
       <section className="relative mx-auto flex min-h-[620px] max-w-7xl flex-col justify-center px-6 py-20">
         <div className="pointer-events-none absolute inset-0 opacity-30" aria-hidden="true">
           <svg viewBox="0 0 800 500" className="h-full w-full" fill="none" stroke="#7c9a6d" strokeWidth="2">
