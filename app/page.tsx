@@ -35,13 +35,6 @@ function buildMailto(subject: string, fields: Record<string, string>) {
 
 function openMailto(subject: string, fields: Record<string, string>) {
   const url = buildMailto(subject, fields);
-  const topWindow = window.top;
-
-  if (topWindow && topWindow !== window) {
-    topWindow.location.assign(url);
-    return;
-  }
-
   window.location.assign(url);
 }
 
