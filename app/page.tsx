@@ -33,11 +33,6 @@ function buildMailto(subject: string, fields: Record<string, string>) {
   return `mailto:info@centerzanaravnootroštvo.si?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-function openMailto(subject: string, fields: Record<string, string>) {
-  const url = buildMailto(subject, fields);
-  window.location.assign(url);
-}
-
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#f7f4ea] text-green-950">
@@ -528,7 +523,6 @@ export default function Home() {
       <div className="mt-10 flex justify-center">
         <a
           href="#kontakt"
-          target="_self"
           className="inline-flex items-center justify-center rounded-full px-7 py-3 text-white transition-all duration-300 shadow-md hover:shadow-lg"
           style={{
             backgroundColor: "#B87955",
@@ -564,7 +558,7 @@ export default function Home() {
               onSubmit={(e) => {
                 e.preventDefault();
                 const f = e.target as HTMLFormElement;
-                openMailto("Hospitacije", {
+                window.location.href = buildMailto("Hospitacije", {
                   Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
                   Email: (f.elements.namedItem("email") as HTMLInputElement).value,
                 });
@@ -600,7 +594,7 @@ export default function Home() {
               onSubmit={(e) => {
                 e.preventDefault();
                 const f = e.target as HTMLFormElement;
-                openMailto("Partnerstvo", {
+                window.location.href = buildMailto("Partnerstvo", {
                   Organizacija: (f.elements.namedItem("organizacija") as HTMLInputElement).value,
                   Email: (f.elements.namedItem("email") as HTMLInputElement).value,
                 });
@@ -632,7 +626,7 @@ export default function Home() {
             <form onSubmit={(e) => {
               e.preventDefault();
               const f = e.target as HTMLFormElement;
-              openMailto("Individualna učna podpora", {
+              window.location.href = buildMailto("Individualna učna podpora", {
                 Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
                 Email: (f.elements.namedItem("email") as HTMLInputElement).value,
                 Predmet: (f.elements.namedItem("predmet") as HTMLSelectElement).value,
@@ -664,7 +658,7 @@ export default function Home() {
               onSubmit={(e) => {
                 e.preventDefault();
                 const f = e.target as HTMLFormElement;
-                openMailto("Varstvo", {
+                window.location.href = buildMailto("Varstvo", {
                   Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
                   Email: (f.elements.namedItem("email") as HTMLInputElement)
                     .value,
@@ -694,7 +688,7 @@ export default function Home() {
               onSubmit={(e) => {
                 e.preventDefault();
                 const f = e.target as HTMLFormElement;
-                openMailto("Delavnice", {
+                window.location.href = buildMailto("Delavnice", {
                   Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
                   Email: (f.elements.namedItem("email") as HTMLInputElement)
                     .value,
