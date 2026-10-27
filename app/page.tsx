@@ -30,13 +30,54 @@ function FoodBadges() {
 }
 
 export default function Home() {
-  const [submittedForms, setSubmittedForms] = useState<Set<string>>(new Set());
+  const [formStates, setFormStates] = useState<Record<string, { status: "idle" | "submitting" | "success" | "error"; message?: string }>>({});
 
-  function handleFormSubmit(event: FormEvent<HTMLFormElement>, formName: string) {
+  async function handleFormSubmit(event: FormEvent<HTMLFormElement>, formName: string) {
     event.preventDefault();
     const form = event.currentTarget;
-    setSubmittedForms((current) => new Set(current).add(formName));
-    form.reset();
+    const formData = Object.fromEntries(new FormData(form).entries());
+
+    setFormStates((current) => ({
+      ...current,
+      [formName]: { status: "submitting" },
+    }));
+
+    try {
+      const response = await fetch("/api/prijave", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ formName, ...formData }),
+      });
+      const result = (await response.json()) as { message?: string };
+
+      if (!response.ok) {
+        throw new Error(result.message || "Oddaja ni uspela. Poskusite znova.");
+      }
+
+      setFormStates((current) => ({
+        ...current,
+        [formName]: { status: "success", message: result.message },
+      }));
+      form.reset();
+    } catch (error) {
+      setFormStates((current) => ({
+        ...current,
+        [formName]: {
+          status: "error",
+          message: error instanceof Error ? error.message : "Oddaja ni uspela. Poskusite znova.",
+        },
+      }));
+    }
+  }
+
+  function formMessage(formName: string) {
+    const state = formStates[formName];
+    if (!state || state.status === "idle" || state.status === "submitting") return null;
+    return (
+      <p className={`text-sm ${state.status === "success" ? "text-green-800" : "text-red-700"}`} role="status">
+        {state.message}
+      </p>
+    );
   }
 
   return (
@@ -565,10 +606,10 @@ export default function Home() {
             >
               <Input name="ime" placeholder="Ime in priimek" required />
               <Input name="email" type="email" placeholder="Email" required />
-              <button type="submit" className="w-full bg-indigo-600 text-white py-2 rounded-xl">
+              <button type="submit" disabled={formStates["Hospitacije"]?.status === "submitting"} className="w-full bg-indigo-600 text-white py-2 rounded-xl">
                 Prijava
               </button>
-              {submittedForms.has("Hospitacije") && <p className="text-sm text-green-800" role="status">Podatki so pripravljeni za oddajo. Pred objavo je treba povezati obrazec s strežniškim prejemnikom.</p>}
+              {formMessage("Hospitacije")}
             </form>
           </Card>
 
@@ -595,10 +636,10 @@ export default function Home() {
             >
               <Input name="organizacija" placeholder="Organizacija" required />
               <Input name="email" type="email" placeholder="Email" required />
-              <button type="submit" className="w-full bg-emerald-600 text-white py-2 rounded-xl">
+              <button type="submit" disabled={formStates["Partnerstvo"]?.status === "submitting"} className="w-full bg-emerald-600 text-white py-2 rounded-xl">
                 Postani partner
               </button>
-              {submittedForms.has("Partnerstvo") && <p className="text-sm text-green-800" role="status">Podatki so pripravljeni za oddajo. Pred objavo je treba povezati obrazec s strežniškim prejemnikom.</p>}
+              {formMessage("Partnerstvo")}
             </form>
           </Card>
         </div>
@@ -626,10 +667,10 @@ export default function Home() {
                 <option value="Kemija">Kemija</option>
               </select>
               <textarea name="sporocilo" placeholder="Kratko sporočilo" className="w-full p-2 rounded-xl border border-black/10 bg-white/70" rows={4} />
-              <button type="submit" className="w-full text-white py-2 rounded-xl" style={{ backgroundColor: "#B87955" }}>
+              <button type="submit" disabled={formStates["Individualna učna podpora"]?.status === "submitting"} className="w-full text-white py-2 rounded-xl" style={{ backgroundColor: "#B87955" }}>
                 Pošlji prijavo
               </button>
-              {submittedForms.has("Individualna učna podpora") && <p className="text-sm text-green-800" role="status">Podatki so pripravljeni za oddajo. Pred objavo je treba povezati obrazec s strežniškim prejemnikom.</p>}
+              {formMessage("Individualna učna podpora")}
             </form>
           </Card>
           <Card>
@@ -647,11 +688,12 @@ export default function Home() {
               <Input name="email" type="email" placeholder="Email" required />
               <button
                 type="submit"
+                disabled={formStates["Varstvo"]?.status === "submitting"}
                 className="w-full bg-green-600 text-white py-2 rounded-xl"
               >
                 Prijava
               </button>
-              {submittedForms.has("Varstvo") && <p className="text-sm text-green-800" role="status">Podatki so pripravljeni za oddajo. Pred objavo je treba povezati obrazec s strežniškim prejemnikom.</p>}
+              {formMessage("Varstvo")}
             </form>
           </Card>
 
@@ -670,11 +712,12 @@ export default function Home() {
               <Input name="email" type="email" placeholder="Email" required />
               <button
                 type="submit"
+                disabled={formStates["Delavnice"]?.status === "submitting"}
                 className="w-full bg-amber-600 text-white py-2 rounded-xl"
               >
                 Prijava
               </button>
-              {submittedForms.has("Delavnice") && <p className="text-sm text-green-800" role="status">Podatki so pripravljeni za oddajo. Pred objavo je treba povezati obrazec s strežniškim prejemnikom.</p>}
+              {formMessage("Delavnice")}
             </form>
           </Card>
         </div>
