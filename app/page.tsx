@@ -1,6 +1,7 @@
 "use client";
 
-import type { InputHTMLAttributes, ReactNode } from "react";
+import { useState } from "react";
+import type { FormEvent, InputHTMLAttributes, ReactNode } from "react";
 
 function Logo() {
   return (
@@ -28,12 +29,16 @@ function FoodBadges() {
   return <div className="mt-6 flex flex-wrap justify-center gap-2 text-sm font-semibold text-green-800"><span className="rounded-full bg-green-100 px-3 py-1">BIO</span><span className="rounded-full bg-amber-100 px-3 py-1">DOMAČE</span><span className="rounded-full bg-lime-100 px-3 py-1">SEZONSKO</span></div>;
 }
 
-function buildMailto(subject: string, fields: Record<string, string>) {
-  const body = Object.entries(fields).map(([key, value]) => `${key}: ${value}`).join("\\n");
-  return `mailto:info@centerzanaravnootroštvo.si?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-
 export default function Home() {
+  const [submittedForms, setSubmittedForms] = useState<Set<string>>(new Set());
+
+  function handleFormSubmit(event: FormEvent<HTMLFormElement>, formName: string) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setSubmittedForms((current) => new Set(current).add(formName));
+    form.reset();
+  }
+
   return (
     <main className="min-h-screen overflow-hidden bg-[#f7f4ea] text-green-950">
       <section className="relative mx-auto flex min-h-[620px] max-w-7xl flex-col justify-center px-6 py-20">
@@ -555,14 +560,7 @@ export default function Home() {
               <li>📖 prenos dobrih praks</li>
             </ul>
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const f = e.target as HTMLFormElement;
-                window.location.href = buildMailto("Hospitacije", {
-                  Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
-                  Email: (f.elements.namedItem("email") as HTMLInputElement).value,
-                });
-              }}
+              onSubmit={(e) => handleFormSubmit(e, "Hospitacije")}
               className="mt-4 space-y-2"
             >
               <Input name="ime" placeholder="Ime in priimek" required />
@@ -570,6 +568,7 @@ export default function Home() {
               <button type="submit" className="w-full bg-indigo-600 text-white py-2 rounded-xl">
                 Prijava
               </button>
+              {submittedForms.has("Hospitacije") && <p className="text-sm text-green-800" role="status">Podatki so pripravljeni za oddajo. Pred objavo je treba povezati obrazec s strežniškim prejemnikom.</p>}
             </form>
           </Card>
 
@@ -591,14 +590,7 @@ export default function Home() {
               <li>🇭🇷 Hrvaška</li>
             </ul>
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const f = e.target as HTMLFormElement;
-                window.location.href = buildMailto("Partnerstvo", {
-                  Organizacija: (f.elements.namedItem("organizacija") as HTMLInputElement).value,
-                  Email: (f.elements.namedItem("email") as HTMLInputElement).value,
-                });
-              }}
+              onSubmit={(e) => handleFormSubmit(e, "Partnerstvo")}
               className="mt-4 space-y-2"
             >
               <Input name="organizacija" placeholder="Organizacija" required />
@@ -606,6 +598,7 @@ export default function Home() {
               <button type="submit" className="w-full bg-emerald-600 text-white py-2 rounded-xl">
                 Postani partner
               </button>
+              {submittedForms.has("Partnerstvo") && <p className="text-sm text-green-800" role="status">Podatki so pripravljeni za oddajo. Pred objavo je treba povezati obrazec s strežniškim prejemnikom.</p>}
             </form>
           </Card>
         </div>
@@ -623,16 +616,7 @@ export default function Home() {
             <p className="mt-3 text-green-900">
               Prijava na individualno podporo pri matematiki, slovenščini ali kemiji.
             </p>
-            <form onSubmit={(e) => {
-              e.preventDefault();
-              const f = e.target as HTMLFormElement;
-              window.location.href = buildMailto("Individualna učna podpora", {
-                Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
-                Email: (f.elements.namedItem("email") as HTMLInputElement).value,
-                Predmet: (f.elements.namedItem("predmet") as HTMLSelectElement).value,
-                Sporocilo: (f.elements.namedItem("sporocilo") as HTMLTextAreaElement).value,
-              });
-            }} className="mt-4 space-y-2">
+            <form onSubmit={(e) => handleFormSubmit(e, "Individualna učna podpora")} className="mt-4 space-y-2">
               <Input name="ime" placeholder="Ime in priimek" required />
               <Input name="email" type="email" placeholder="E-pošta" required />
               <select name="predmet" className="w-full p-2 rounded-xl border border-black/10 bg-white/70" required>
@@ -645,6 +629,7 @@ export default function Home() {
               <button type="submit" className="w-full text-white py-2 rounded-xl" style={{ backgroundColor: "#B87955" }}>
                 Pošlji prijavo
               </button>
+              {submittedForms.has("Individualna učna podpora") && <p className="text-sm text-green-800" role="status">Podatki so pripravljeni za oddajo. Pred objavo je treba povezati obrazec s strežniškim prejemnikom.</p>}
             </form>
           </Card>
           <Card>
@@ -655,15 +640,7 @@ export default function Home() {
               🌿 Varstvo otrok
             </h3>
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const f = e.target as HTMLFormElement;
-                window.location.href = buildMailto("Varstvo", {
-                  Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
-                  Email: (f.elements.namedItem("email") as HTMLInputElement)
-                    .value,
-                });
-              }}
+              onSubmit={(e) => handleFormSubmit(e, "Varstvo")}
               className="mt-3 space-y-2"
             >
                <Input name="ime" placeholder="Ime otroka" required />
@@ -674,6 +651,7 @@ export default function Home() {
               >
                 Prijava
               </button>
+              {submittedForms.has("Varstvo") && <p className="text-sm text-green-800" role="status">Podatki so pripravljeni za oddajo. Pred objavo je treba povezati obrazec s strežniškim prejemnikom.</p>}
             </form>
           </Card>
 
@@ -685,15 +663,7 @@ export default function Home() {
               🎨 Delavnice
             </h3>
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const f = e.target as HTMLFormElement;
-                window.location.href = buildMailto("Delavnice", {
-                  Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
-                  Email: (f.elements.namedItem("email") as HTMLInputElement)
-                    .value,
-                });
-              }}
+              onSubmit={(e) => handleFormSubmit(e, "Delavnice")}
               className="mt-3 space-y-2"
             >
               <Input name="ime" placeholder="Ime otroka" required />
@@ -704,6 +674,7 @@ export default function Home() {
               >
                 Prijava
               </button>
+              {submittedForms.has("Delavnice") && <p className="text-sm text-green-800" role="status">Podatki so pripravljeni za oddajo. Pred objavo je treba povezati obrazec s strežniškim prejemnikom.</p>}
             </form>
           </Card>
         </div>
