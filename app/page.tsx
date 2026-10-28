@@ -1,6 +1,6 @@
 "use client";
 
-import type { InputHTMLAttributes, ReactNode } from "react";
+import { useState, type FormEvent, type InputHTMLAttributes, type ReactNode } from "react";
 
 function Logo() {
   return (
@@ -34,6 +34,46 @@ function buildMailto(subject: string, fields: Record<string, string>) {
 }
 
 export default function Home() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionMessage, setSubmissionMessage] = useState<string | null>(null);
+  const [submissionError, setSubmissionError] = useState<string | null>(null);
+
+  async function submitApplication(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (isSubmitting) return;
+
+    const form = event.currentTarget;
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    const formData = new FormData(form);
+    const fields = Object.fromEntries(formData.entries());
+    setIsSubmitting(true);
+    setSubmissionMessage(null);
+    setSubmissionError(null);
+
+    try {
+      const response = await fetch("/api/applications", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "individualna-ucna-podpora",
+          idempotencyKey: crypto.randomUUID(),
+          fields,
+        }),
+      });
+      const result = (await response.json()) as { error?: string };
+      if (!response.ok) throw new Error(result.error ?? "Prijave ni bilo mogoče poslati.");
+      form.reset();
+      setSubmissionMessage("Prijava je bila uspešno poslana.");
+    } catch (error) {
+      setSubmissionError(error instanceof Error ? error.message : "Prijave ni bilo mogoče poslati. Poskusite znova.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
     <main className="min-h-screen overflow-hidden bg-[#f7f4ea] text-green-950">
       <section className="relative mx-auto flex min-h-[620px] max-w-7xl flex-col justify-center px-6 py-20">
@@ -623,28 +663,22 @@ export default function Home() {
             <p className="mt-3 text-green-900">
               Prijava na individualno podporo pri matematiki, slovenščini ali kemiji.
             </p>
-            <form onSubmit={(e) => {
-              e.preventDefault();
-              const f = e.target as HTMLFormElement;
-              window.location.href = buildMailto("Individualna učna podpora", {
-                Ime: (f.elements.namedItem("ime") as HTMLInputElement).value,
-                Email: (f.elements.namedItem("email") as HTMLInputElement).value,
-                Predmet: (f.elements.namedItem("predmet") as HTMLSelectElement).value,
-                Sporocilo: (f.elements.namedItem("sporocilo") as HTMLTextAreaElement).value,
-              });
-            }} className="mt-4 space-y-2">
-              <Input name="ime" placeholder="Ime in priimek" required />
-              <Input name="email" type="email" placeholder="E-pošta" required />
-              <select name="predmet" className="w-full p-2 rounded-xl border border-black/10 bg-white/70" required>
+            <form onSubmit={submitApplication} className="mt-4 space-y-2">
+              <p className="sr-only" aria-live="polite">{isSubmitting ? "Pošiljam prijavo …" : submissionMessage ?? submissionError}</p>
+              <Input name="ime" placeholder="Ime in priimek" required aria-required="true" />
+              <Input name="email" type="email" placeholder="E-pošta" required aria-required="true" />
+              <select name="predmet" className="w-full p-2 rounded-xl border border-black/10 bg-white/70" required aria-required="true">
                 <option value="">Izberite predmet</option>
                 <option value="Matematika">Matematika</option>
                 <option value="Slovenščina">Slovenščina</option>
                 <option value="Kemija">Kemija</option>
               </select>
               <textarea name="sporocilo" placeholder="Kratko sporočilo" className="w-full p-2 rounded-xl border border-black/10 bg-white/70" rows={4} />
-              <button type="submit" className="w-full text-white py-2 rounded-xl" style={{ backgroundColor: "#B87955" }}>
-                Pošlji prijavo
+              <button type="submit" disabled={isSubmitting} className="w-full text-white py-2 rounded-xl disabled:cursor-not-allowed disabled:opacity-60" style={{ backgroundColor: "#B87955" }}>
+                {isSubmitting ? "Pošiljam prijavo …" : "Pošlji prijavo"}
               </button>
+              {submissionMessage && <p className="text-sm text-green-800" role="status">{submissionMessage}</p>}
+              {submissionError && <p className="text-sm text-red-700" role="alert">{submissionError}</p>}
             </form>
           </Card>
           <Card>
